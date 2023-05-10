@@ -8,22 +8,22 @@
 }
 
 
-
+/* 
 html, body {
   height: 100%;
-}
+} */
 
 body {
   font: 14px/1 'Open Sans', sans-serif;
   color: #555;
-  /* background: #eee; */
+  background: #eee;
 }
 
-h1 {
+/* h1 {
   padding: 50px 0;
   font-weight: 400;
   text-align: center;
-}
+} */
 
 p {
   margin: 0 0 20px;
@@ -38,7 +38,7 @@ p {
   background: #fff;
 }
 
-section {
+.section1 {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
@@ -48,7 +48,7 @@ section {
   display: none;
 }
 
-label {
+.label1 {
   display: inline-block;
   margin: 0 0 -1px;
   padding: 15px 25px;
@@ -58,41 +58,41 @@ label {
   border: 1px solid transparent;
 }
 
-label:before {
+.label1:before {
   font-family: fontawesome;
   font-weight: normal;
   margin-right: 10px;
 }
 
-label[for*='1']:before {
+.label1[for*='1']:before {
   content: '\f007';
 }
 
-label[for*='2']:before {
+.label1[for*='2']:before {
   content: '\f19d';
 }
 
-label[for*='3']:before {
+.label1[for*='3']:before {
   content: '\f02d';
 }
 
-label[for*='4']:before {
+.label1[for*='4']:before {
   content: '\f0c0';
 }
 
-label[for*='5']:before {
+.label1[for*='5']:before {
   content: '\f0c0';
 }
-label[for*='6']:before {
+.label1[for*='6']:before {
   content: '\f0c0';
 }
 
-label:hover {
+.label1:hover {
   color: #888;
   cursor: pointer;
 }
 
-.inp:checked + label {
+.inp:checked + .label1 {
   color: #555;
   border: 1px solid #ddd;
   border-top: 2px solid orange;
@@ -109,11 +109,11 @@ label:hover {
 }
 
 @media screen and (max-width: 650px) {
-  label {
+  .label1 {
     font-size: 0;
   }
 
-  label:before {
+  .label1:before {
     margin: 0;
     font-size: 18px;
   }
@@ -122,7 +122,7 @@ label:hover {
 @media screen and (max-width: 400px) {
   
 
-  label {
+  .label1 {
     padding: 15px;
   }
 }

@@ -9,7 +9,7 @@ body{
   height: 100vh;
   /* display: grid; */
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
   /* padding: 10px; */
   /* background: #f2f6ff; */
   /* background: url("https://wallpapers.com/images/hd/pastel-background-f16tvnl9d0ad4r7a.jpg"); */
@@ -71,7 +71,7 @@ body{
   font-weight: 500;
   position: relative;
 }
-.content form .user-details1{
+.content33 form .user-details1{
   /* display: flex; */
   flex-wrap: wrap;
   justify-content: space-between;
@@ -171,7 +171,7 @@ form .user-details1 .input-box1{
   form .category{
     width: 100%;
   }
-  .content form .user-details1{
+  .content33 form .user-details1{
     max-height: 400px;
     /* overflow-y: scroll; */
   }

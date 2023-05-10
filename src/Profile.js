@@ -82,15 +82,15 @@ function Profile(props) {
     <div>
      <div className="formcontainer">
   <div className="title">Basic Details</div>
-  <div className="content">
+  <div className="content33">
     <form action="#">
       <div className="user-details">
         <div className="input-box">
-          <span className="details">Full Name</span>
+          <span>Full Name</span>
           <input type="text" placeholder="name" required value={fullName}  onChange={(e) => setFullName(e.target.value)} name="fullName" />
         </div>
         <div className="input-box">
-          <span className="details">DOB</span>
+          <span>DOB</span>
           <input type="date" required value={dob}   onChange={(e) => setDOB(e.target.value)} name="dob"/>
         </div>
         {/* <div className="input-box">
@@ -118,13 +118,13 @@ function Profile(props) {
     </select>
 
         <div className="input-box">
-          <span className="details">Phone Number</span>
+          <span>Phone Number</span>
           <input type="tel" placeholder="phone number" maxLength={10}  required value={phone}  onChange={(e) => setPhone(e.target.value)} name="phone"/>
         </div>
         
         
         <div className="input-box">
-          <span className="details">Height</span>
+          <span>Height</span>
           <input type="text" placeholder="height" required value={height}  onChange={(e) => setHeight(e.target.value)} name="height" />
         </div>
        

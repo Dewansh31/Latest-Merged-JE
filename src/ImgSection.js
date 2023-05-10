@@ -70,7 +70,7 @@ const ImgSection = () => {
     <div>
     <div className="formcontainer">
 <div className="title">Profile Image</div>
-<div className="content">
+<div className="content33">
  <form action="#">
    <div className="user-details">
   

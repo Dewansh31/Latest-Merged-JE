@@ -15,41 +15,41 @@ const NavTab = (props) => {
 
     <Sidebar username={props.name}/>
     
-   <div className='cont'>
-  <h1>
+   <div className='cont' style={{padding:"150px 0px"}}>
+  {/* <h1>
     
-  </h1>
-  <main className='mainT'>
+  </h1> */}
+  <main className='mainT' >
     <input className="inp" id="tab1" type="radio" name="tabs" defaultChecked />
-    <label htmlFor="tab1">1</label>
+    <label htmlFor="tab1" className='label1'>1</label>
     <input className="inp" id="tab2" type="radio" name="tabs" />
-    <label htmlFor="tab2">2</label>
+    <label htmlFor="tab2" className='label1'>2</label>
     <input className="inp" id="tab3" type="radio" name="tabs" />
-    <label htmlFor="tab3">3</label>
+    <label htmlFor="tab3" className='label1'>3</label>
     <input className="inp" id="tab4" type="radio" name="tabs" />
-    <label htmlFor="tab4">4</label>
+    <label htmlFor="tab4" className='label1'>4</label>
     <input className="inp" id="tab5" type="radio" name="tabs" />
-    <label htmlFor="tab5">5</label>
+    <label htmlFor="tab5" className='label1'>5</label>
     <input className="inp" id="tab6" type="radio" name="tabs" />
-    <label htmlFor="tab6">6</label>
+    <label htmlFor="tab6" className='label1'>6</label>
 
 
-    <section id="content1">
+    <section id="content1" className='section1'>
     <Profile/>
     </section>
-    <section id="content2">
+    <section id="content2" className='section1'>
     <EducationDetails/>
     </section>
-    <section id="content3">
+    <section id="content3" className='section1'>
     <ProfessionalDetails/>
     </section>
-    <section id="content4">
+    <section id="content4" className='section1'>
     <FamilyDetails/>
     </section>
-    <section id="content5">
+    <section id="content5" className='section1'>
     <BackgroundDetails/>
     </section>
-    <section id="content6">
+    <section id="content6" className='section1'>
       <ImgSection/>
     </section>
     

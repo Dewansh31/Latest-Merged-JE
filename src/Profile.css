@@ -7,15 +7,12 @@
 
   
 }
-body{
+/* body{
   height: 100vh;
-  
   display: grid;
-  /* justify-content: center;
-  align-items: center; */
   padding: 10px;
-  /* background: #f5eff1; */
-}
+  
+} */
 .form-select{
   height: fit-content;
   margin-top: 20px; 
@@ -46,7 +43,7 @@ body{
   border-radius: 5px;
   background: #ea025b;
 }
-.content form .user-details{
+.content33 form .user-details{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -150,7 +147,7 @@ form .user-details .input-box{
   form .category{
     width: 100%;
   }
-  .content form .user-details{
+  .content33 form .user-details{
     max-height: 300px;
     overflow-y: scroll;
   }
@@ -162,7 +159,7 @@ form .user-details .input-box{
     .formcontainer {
       max-width: 400px;
     }
-  .formcontainer .content .category{
+  .formcontainer .content33 .category{
     flex-direction: column;
   }
 }

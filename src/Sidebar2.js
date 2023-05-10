@@ -64,16 +64,7 @@ function Sidebar2(props) {
               <small>Dashboard</small>
             </Link>
           </li>
-          <li>
-            <Link to="/addmember">
-              <span className="las la-user-alt" />
-              <small>Edit Member</small>
-              {/* <ul>
-                <li>Free Members</li>
-                <li>Premium Members</li>
-              </ul> */}
-            </Link>
-          </li>
+          
           <li>
             <Link to="/addcaste">
               <span className="las la-envelope" />
@@ -103,14 +94,14 @@ function Sidebar2(props) {
     </div>
   </div>
   <div className="main-content">
-    <header>
+    <header className='hd2'>
       <div className="header-content">
         <label htmlFor="menu-toggle">
           <span className="las la-bars" />
         </label>
         <div className="header-menu">
          
-          <div className="notify-icon">
+          {/* <div className="notify-icon">
             <span className="las la-envelope" />
             <span className="notify">4</span>
           </div>
@@ -118,7 +109,7 @@ function Sidebar2(props) {
             <span className="las la-bell" />
             <span className="notify">3</span>
           </div>
-          
+           */}
           <Button variant="danger">
 
 

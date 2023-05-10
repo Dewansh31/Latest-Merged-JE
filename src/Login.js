@@ -94,22 +94,22 @@ function Login() {
 
 
     <div className="title">Login</div>
-    <div className="content">
+    <div className="content33">
       <form action="#">
         <div className="user-details1">
           
           <div className="input-box1">
-            <span className="details">Email</span>
+            <span>Email</span>
             <input type="email" placeholder="Enter your email" required value={email}  onChange={(e) => setEmail(e.target.value)} name="email" />
           </div>
          
           <div className="input-box1">
-            <span className="details">Password</span>
+            <span>Password</span>
             <input type="password" placeholder="Enter your password" required value={password}  onChange={(e) => setPassword(e.target.value)} name="password" />
           </div>
           <p className="errormsg">{errorMsg}</p>
           <div className="button">
-            <input type="submit" defaultValue="Login" isabled={submitButtonDisabled} onClick={handleSubmit} /><br /><br/>
+            <input type="submit" defaultValue="Login" disabled={submitButtonDisabled} onClick={handleSubmit} /><br /><br/>
            
 
             <ToastContainer
@@ -117,8 +117,8 @@ function Login() {
               autoClose={5000}
             />
 
-            <span className="text">Don't Have An Account? &nbsp;
-              <Link to="/signup" className="text login-link">Signup</Link>
+            <span className="text1">Don't Have An Account? &nbsp;
+              <Link to="/signup" className="login-link">Signup</Link>
             </span>
           </div>
           

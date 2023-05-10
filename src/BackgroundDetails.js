@@ -79,7 +79,7 @@ function BackgroundDetails() {
     <div>
        <div className="formcontainer">
   <div className="title">Background Details</div>
-  <div className="content">
+  <div className="content33">
     <form action="#">
       <div className="user-details">
       <select className="form-select input-box" required value={religion} onChange={(e) => setReligion(e.target.value)} name="pob" aria-label="Default select example">
@@ -98,11 +98,11 @@ function BackgroundDetails() {
 
        
         <div className="input-box">
-          <span className="details">Caste</span>
+          <span>Caste</span>
           <input type="text" placeholder=" caste" required value={caste}  onChange={(e) => setCaste(e.target.value)} name="caste" />
         </div>
         <div className="input-box">
-          <span className="details">Sub Caste</span>
+          <span>Sub Caste</span>
           <input type="text" placeholder=" sub caste" required value={subcaste}  onChange={(e) => setSubCaste(e.target.value)} name="subcaste" />
         </div>
         {/* <div className="input-box">

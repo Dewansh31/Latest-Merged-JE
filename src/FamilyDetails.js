@@ -82,31 +82,31 @@ function FamilyDetails() {
     <div>
        <div className="formcontainer">
   <div className="title">Family Details</div>
-  <div className="content">
+  <div className="content33">
     <form action="#">
       <div className="user-details">
         <div className="input-box">
-          <span className="details">Father Name</span>
+          <span >Father Name</span>
           <input type="text" placeholder=" Father's name" required value={fathersName}  onChange={(e) => setFatherName(e.target.value)} name="fathersName"  />
         </div>
         <div className="input-box">
-          <span className="details">Mother Name</span>
+          <span >Mother Name</span>
           <input type="text" placeholder=" Mother's username" required value={mothersName}  onChange={(e) => setMotherName(e.target.value)} name="mothersName"  />
         </div>
         <div className="input-box">
-          <span className="details">Father Occupation</span>
+          <span >Father Occupation</span>
           <input type="text" placeholder=" Father's Ocuupation" required value={fatherOccupation}  onChange={(e) => setFatherOccupation(e.target.value)} name="fatherOccupation"  />
         </div>
         <div className="input-box">
-          <span className="details">Mother Occupation</span>
+          <span >Mother Occupation</span>
           <input type="text" placeholder=" Mother's Ocuupation" required value={motherOccupation}  onChange={(e) => setMotherOccupation(e.target.value)} name="motherOccupation"  />
         </div>
         <div className="input-box">
-          <span className="details">Family Lives</span>
+          <span >Family Lives</span>
           <input type="text" placeholder=" Family Lives" required value={familyLives}  onChange={(e) => setFLives(e.target.value)} name="familyLives"  />
         </div>
         <div className="input-box">
-          <span className="details">Family Type</span>
+          <span >Family Type</span>
           <input type="text" placeholder=" Family type" required value={familyType}  onChange={(e) => setFType(e.target.value)} name="familyType"  />
         </div>
        

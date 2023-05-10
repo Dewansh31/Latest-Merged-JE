@@ -7,8 +7,8 @@ import Dashboard from './pages/Dashboard';
 import MyConnection from './pages/MyConnection';
 import MyRequests from './pages/MyRequests';
 import NavTab from './components/NavTab'
-import Signup from './Signup'
-import Login from './Login'
+// import Signup from './Signup'
+// import Login from './Login'
 // import Swiper from './Swiper'
 
 import { useState,useEffect } from 'react';
@@ -24,11 +24,18 @@ import { useNavigate } from 'react-router-dom';
 
 
 import FreeMember from "./FreeMember";
-import AddMember from "./AddMember";
+// import AddMember from "./AddMember";
 import AddReligion from "./AddReligion";
 import Dashboard2 from "./Dashboard2";
 import PemiumMember from "./PemiumMember";
 import AddCaste from "./AddCaste";
+
+import { Login } from './component/Login';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Footer } from './component/Footer'
+// import { NavBar } from './component/NavBar'
+// import { Home } from './component/Home'
+import Landing from './Landing';
 
 
 function App() {
@@ -59,116 +66,123 @@ function App() {
 
 
   return (
-    <Router>
+
+	<>
+	 {/* <NavBar/> */}
+	 <Router>
       
 
 
     
 
-		<Routes>
+	  <Routes>
+
+	  {/* <Route path="/signup" element={<Signup />} />
+	  <Route path="/login" element={<Login />} />  */}
+	   <Route path="/login" element={<Login/>} /> 
+	  <Route path="/landing" element={<Landing/>} /> 
 
 
-           { !isAuthenticated && 
 
-                    
-						<>
-						<Route path="/signup" element={<Signup />} />
-						<Route path="/login" element={<Login />} /> 
-						{/* <Route path='/error' element={<ErrorPage/>} /> */}
-						<Route path='*' element={<Navigate to='/login' />} />
-					
-						</>
+		 { !isAuthenticated && 
 
-		   }
-			
+			  <Route path='*' element={<Landing />} />
 
+		  }
+		  
+
+  
+
+ 
+
+			  { isAuthenticated &&
+
+			  
+					  
+
+				  <>
+
+				  <Route path='*' element={<Navigate to='/error' />} />
+
+				  {/* admin */}
+
+				  {  isAdmin &&
+
+							  <>
+
+							  <Route path="/" element={<Dashboard2 name={userName}/>} />
+
+							  <Route path="/dashboard2" element={<Dashboard2 name={userName}/>} />
+							  <Route path="/addreligion" element={<AddReligion name={userName} />} />
+							  <Route path="/addcaste" element={<AddCaste name={userName} />}/>
+							  {/* <Route path="/addmember" element={<AddMember name={userName} />} /> */}
+							  <Route path="/freemember" element={<FreeMember name={userName}/>} />
+							  <Route path="/premiummember" element={<PemiumMember name={userName} />} />
+
+							  <Route path="/couples" element={<Couples name={userName} />} />
+							  <Route path='/error' element={<ErrorPage/>} />
+
+							  {/* <Route path='*' element={<Navigate to='/error' />} /> */}
+
+							  </>
+
+				  }
+
+				  { !isAdmin && 
+
+					 
+				  <>
+
+				  <Route path="/" element={<Dashboard name={userName}/>} />
+
+				  <Route path="/dashboard" element={<Dashboard name={userName}  />} />
+				  <Route path="/selfinfo" element={<SelfInfo name={userName} />} />
+				  <Route path="/profile" element={<NavTab name={userName} />} />
+				  <Route path="/familydetails" element={<FamilyDetails name={userName} />} />
+				  <Route path="/professionaldetails" element={<ProfessionalDetails name={userName} />} />
+				  <Route path="/educationaldetails" element={<EducationDetails name={userName} />} />
+				  <Route path="/myconnections" element={<MyConnection  name={userName}/>} />
+				  <Route path="/myrequests" element={<MyRequests name={userName} />} />
+				  <Route path="/myproposals" element={<Proposals name={userName} />} />
+				  <Route path="/couples" element={<Couples name={userName} />} />
+				  <Route path='/error' element={<ErrorPage/>} />
+				  {/* <Route path='*' element={<Navigate to='/error' />} /> */}
+				  </>
+
+
+				  }
+				  
+
+
+			  
+
+
+
+					  
+
+
+
+				  
+
+				  
+				  </>
+				  }
+
+
+				  
+			  
+
+
+
+
+	  </Routes>
+
+  
+
+  
 	
-
-   
-
-				{ isAuthenticated &&
-						
-
-					<>
-
-					{/* admin */}
-
-					{  isAdmin &&
-
-								<>
-
-								<Route path="/" element={<Dashboard2 name={userName}/>} />
-
-								<Route path="/dashboard2" element={<Dashboard2 name={userName}/>} />
-								<Route path="/addreligion" element={<AddReligion name={userName} />} />
-								<Route path="/addcaste" element={<AddCaste name={userName} />}/>
-								<Route path="/addmember" element={<AddMember name={userName} />} />
-								<Route path="/freemember" element={<FreeMember name={userName}/>} />
-								<Route path="/premiummember" element={<PemiumMember name={userName} />} />
-
-								<Route path="/couples" element={<Couples name={userName} />} />
-								<Route path='/error' element={<ErrorPage/>} />
-
-								<Route path='*' element={<Navigate to='/error' />} />
-
-								</>
-
-					}
-
-                    { !isAdmin && 
-
-					   
-					<>
-
-					<Route path="/" element={<Dashboard name={userName}/>} />
-
-					<Route path="/dashboard" element={<Dashboard name={userName}  />} />
-					<Route path="/selfinfo" element={<SelfInfo name={userName} />} />
-					<Route path="/profile" element={<NavTab name={userName} />} />
-					<Route path="/familydetails" element={<FamilyDetails name={userName} />} />
-					<Route path="/professionaldetails" element={<ProfessionalDetails name={userName} />} />
-					<Route path="/educationaldetails" element={<EducationDetails name={userName} />} />
-					<Route path="/myconnections" element={<MyConnection  name={userName}/>} />
-					<Route path="/myrequests" element={<MyRequests name={userName} />} />
-					<Route path="/myproposals" element={<Proposals name={userName} />} />
-					<Route path="/couples" element={<Couples name={userName} />} />
-					<Route path='/error' element={<ErrorPage/>} />
-					<Route path='*' element={<Navigate to='/error' />} />
-					</>
-
-
-					}
-					
-
-
-				
-
-
-
-						
-
-
-
-					
-
-					
-					</>
-					}
-
-
-					
-				
-
-
-
-
-		</Routes>
-
-	
-
-	
-	  
-    </Router>
+  </Router>
+	</>
   );
 }
 

@@ -16,6 +16,7 @@ import { app } from '../firebase';
 import { getAuth } from "firebase/auth";
 import './selfInfo.css'
 import { Link, NavLink } from 'react-router-dom';
+import Spinner from '../Spinner';
 
 const firestore = getFirestore(app)
 
@@ -40,7 +41,7 @@ const SelfInfo = (props) => {
     const docSnap = await getDoc(docRef);
     const sdata = docSnap.data();
     setSelected(sdata)
-    // console.log(sdata.username);
+
 
   }
 
@@ -59,19 +60,22 @@ const SelfInfo = (props) => {
 
         <Sidebar username={props.name}/>
 
-        {/* <MDBBtn onClick={toggleShow} >Full screen below xl</MDBBtn>
-        <MDBModal  tabIndex='-1' show={fullscreenXlModal} setShow={setFullscreenXlModal}>
-          <MDBModalDialog size='fullscreen-xl-down'>
-            <MDBModalContent> */}
+       
             <div >
-            <MDBModalHeader className='header '>
-                <MDBModalTitle >Your Profile Details</MDBModalTitle>
-               
-              </MDBModalHeader>
+            
+
+    <div className="page-header header" style={{padding:"0 0 0 0",position:"relative"}}>
+
+            <h3 style={{padding:"10px 50px ",margin:"auto"}}>My Profile</h3>
+       
+      </div>
 
             </div>
              
               <MDBModalBody className='selfInfoBody' >
+
+            
+                
               <div>
       <div className="container rounded bg-white mt-5 mb-5 ">
         <div className="row">
@@ -237,9 +241,9 @@ const SelfInfo = (props) => {
                 
               <Link type="button" class="btn btn-primary" to="/profile">Update Details</Link>
               </MDBModalFooter>
-            {/* </MDBModalContent>
-          </MDBModalDialog>
-        </MDBModal> */}
+           
+          
+
       </>
     );
 }

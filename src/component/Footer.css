@@ -1,0 +1,259 @@
+.footer {
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://thumbs.dreamstime.com/b/all-you-need-love-text-d-reder-red-silk-ribbon-forming-heart-shape-grey-background-267492441.jpg");
+    background-size: cover;
+    background-position:center ;
+    /* background-color: #FF5033; */
+    
+}
+
+.sd 
+{
+    padding-top:400px;
+   
+   
+    margin-bottom: -30px;
+   
+    
+}
+.ql 
+{
+    color: rgb(255, 255, 255);
+}
+.al 
+{
+    color:#fff;
+    font:16px;
+    background-color: #FF5033;
+    position: relative;
+   left:80px;
+    width:200px;
+    border-radius:50px;
+    border-color: #ff5033;
+     height: 50px;
+}
+.ak 
+{
+   position: relative;
+   left:80px;
+   font-size: 40px;
+}
+.ah
+{
+   position: relative;
+   left:30px;
+   font-size: 50px;
+   font-family: 'cursive';
+}
+
+.first {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: rgb(206,206,206);
+    font-family: 'Poppins', sans-serif;
+ 
+    position: relative;
+}
+
+    .first h4 {
+        font-size: 20px;
+        letter-spacing: 3px;
+        position: relative;
+        margin-bottom: 20px;
+        font-size: 1.6em;
+        color: #fff;
+        padding-bottom: 0.5em;
+    }
+
+        .first h4::after {
+            content: '';
+            background: #FF5033;
+            width: 20%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 160px;
+
+        }
+
+    .first p {
+        font-size: 20px;
+    }
+    .first p:hover {
+        color:#fff;
+    }
+
+.second {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: rgb(206,206,206);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.second2 {
+   
+    color: rgb(206,206,206);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.second h4 {
+    font-size: 20px;
+    letter-spacing: 3px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    color: #fff;
+    padding-bottom: 0.5em;
+}
+
+    .second h4::after {
+        content: '';
+        background: #FF5033;
+        width: 20%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+    }
+
+
+.second li {
+    list-style: none;
+    padding-bottom: 30px;
+}
+
+.second a, .second2 a {
+    color: rgb(206, 206, 206);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+    .second a:hover, .second2 a:hover {
+        color: #FF5033;
+        transition: 0.2s;
+        text-shadow: 1px 1px 20px rgba(0,0,0,1);
+        text-decoration: none
+
+    }
+
+
+
+.third {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: rgb(206,206,206);
+    font-family: 'Poppins', sans-serif;
+    text-align: right;
+}
+
+
+    .third h4 {
+        font-size: 20px;
+        letter-spacing: 3px;
+        position: relative;
+        margin-bottom: 20px;
+        font-size: 1.6em;
+        color: #fff;
+        padding-bottom: 0.5em;
+    }
+
+
+        .third h4::after {
+            content: '';
+            background: #FF5033;
+            width: 20%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 80%;
+        }
+
+
+
+    .third li {
+        list-style: none;
+        padding-bottom: 15px;
+    }
+
+
+    .third a {
+        color: rgb(206, 206, 206);
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+
+        .third,.xs a:hover {
+            color: #fff;
+            transition: 0.2s;
+            text-shadow: 1px 1px 20px rgba(0,0,0,1);
+        }
+
+
+@media screen and (max-width:1000px) {
+    .first {
+        text-align: center;
+    }
+
+        .first h4::after {
+            left: 40%;
+        }
+}
+
+@media screen and (max-width:1000px) {
+    .third {
+        text-align: center;
+    }
+
+        .third h4::after {
+            left: 40% !important;
+        }
+}
+
+
+
+.line {
+    
+    background-color:rgb(206,206,206);
+    width:100%;
+}
+
+.container h1{
+    text-align:center;
+    margin-top:100px;
+    margin-bottom:100px;
+}
+.xs 
+{
+    font-size:20px;
+}
+@media screen and (max-width:1000px) {
+    .sd 
+    {
+        position: relative;
+        top:350px;
+        
+    }
+    .footer 
+   {
+    width:450px;
+   }
+   
+   
+}
+@media screen and (max-width:375px) {
+    .footer 
+    {
+        position: relative;
+        width: 450px;
+    
+    }
+    
+}

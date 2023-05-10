@@ -77,7 +77,7 @@ function ProfessionalDetails() {
     <div>
       <div className="formcontainer">
         <div className="title">Professional Details</div>
-        <div className="content">
+        <div className="content33">
           <form action="#">
             <div className="user-details">
 
@@ -95,11 +95,11 @@ function ProfessionalDetails() {
         <option value="Pune">Pune</option>
       </select>
               {/* <div className="input-box">
-                <span className="details">Employed In</span>
+                <span >Employed In</span>
                 <input type="text" placeholder="Work place" required value={workplace}  onChange={(e) => setWorkPlace(e.target.value)} name="workplace" />
               </div> */}
               <div className="input-box">
-                <span className="details">Annual Income</span>
+                <span >Annual Income</span>
                 <input
                   type="number"
                   placeholder="annual income"
@@ -108,7 +108,7 @@ function ProfessionalDetails() {
                 />
               </div>
               <div className="input-box">
-                <span className="details">Phone Number</span>
+                <span >Phone Number</span>
                 <input type="tel"  maxLength={10} placeholder="phone number" required value={contact}  onChange={(e) => setContact(e.target.value)} name="contact" />
               </div>
             </div>

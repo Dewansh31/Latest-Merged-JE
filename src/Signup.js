@@ -27,10 +27,10 @@ function Signup() {
 
   const navigate = useNavigate();
 
-  const toastSuccess = () => toast.success('Signed up successfully!');
-  const toastError = () => toast.error('Signup failed!');
-  const validationError = () => toast.error('Please fill all fields!');
-  const validation2Error = () => toast.error('Invalid credentials!');
+  const toastSuccess2 = () => toast.success('Signed up successfully!');
+  const toastError2 = () => toast.error('Signup failed!');
+  const validationError2 = () => toast.error('Please fill all fields!');
+  const validation2Error2 = () => toast.error('Invalid credentials!');
    
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrl, setImageUrl] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2hw0Mq5YNF3BFKPHP5WBxrAOAl1_MdYPxQ&usqp=CAU");
@@ -40,11 +40,11 @@ function Signup() {
     resolve => setTimeout(resolve, ms)
   );
 
-  const [username, setUserName] = useState("");
-  const [email, setEmail] = useState("");
+  const [username2, setUserName2] = useState("");
+  const [email2, setEmail2] = useState("");
   const [role,setRole] = useState("user");
-  const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [errorMsg2, setErrorMsg2] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
 
@@ -184,20 +184,20 @@ function Signup() {
     <div>
       <div className="lcontainer1">
     <div className="title">Signup</div>
-    <div className="content">
+    <div className="content33">
       <form action="#">
         <div className="user-details1">
           <div className="input-box1">
-            <span className="details">Username</span>
+            <span>Username</span>
             <input type="text" placeholder="Enter your username" required value={username}  onChange={(e) => setUserName(e.target.value)} name="username"  />
           </div>
           <div className="input-box1">
-            <span className="details">Email</span>
+            <span>Email</span>
             <input type="email" placeholder="Enter your email" required  value={email}  onChange={(e) => setEmail(e.target.value)} name="email" />
           </div>
          
           <div className="input-box1">
-            <span className="details">Password</span>
+            <span>Password</span>
             <input type="password" placeholder="Enter your password" required value={password}  onChange={(e) => setPassword(e.target.value)} name="password"/>
           </div>
 
@@ -224,8 +224,8 @@ function Signup() {
               autoClose={5000}
             />
 
-            <span className="text">Already Have An Account? &nbsp;
-              <Link to="/login" className="text login-link">Login</Link>
+            <span className="text1">Already Have An Account? &nbsp;
+              <Link to="/login" className="login-link">Login</Link>
             </span>
           </div>
 

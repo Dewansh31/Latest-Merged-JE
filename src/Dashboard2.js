@@ -241,21 +241,20 @@ function Dashboard2(props) {
     
 
   }
-
   const data = {
-    labels: ['Total Members', 'Free Members', 'Featured Members'],
+    labels: ['Free Members', 'Featured Members'],
     datasets: [
       {
         label: 'Members',
-        data: [totalMembers, freeMembers, featuredMembers],
+        data: [ freeMembers, featuredMembers],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
+       
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
+          
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
           
@@ -320,7 +319,7 @@ function Dashboard2(props) {
     <div className="amain-content">
        <main>
       <div className="page-header" style={{padding:"0 0 0 0"}}>
-        <h1 style={{padding:"10px 0 "}}>Dashboard</h1>
+        <h1 style={{padding:"10px 0",fontFamily:"sans-serif" ,top:"0px"}}>Dashboard</h1>
        
       </div>
       <div className="page-content">

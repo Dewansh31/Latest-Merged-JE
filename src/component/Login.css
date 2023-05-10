@@ -1,0 +1,59 @@
+/*@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");*/
+
+
+
+.akj {
+  /* background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAADFBMVEX29fj29vf29ff29frFI9IEAAABt0lEQVR4nO3c0WnEQBAFwR0p/5xPG8FN/1dhFMBjtsFgfGbOOz6rz5nrPD6bz5zv5z3j8/fz3LHYGmvt3Qtj6XuJbHmFgbECgQ8EPhD4wCsMjBV4hoHABy4r0KzAWIFnGAh84LICzQqMFXiGgcAHLivQrMBYgWcYCHzgsgLNCowVeIaBwAcuK9CswFiBZxgIfOCyAs0KjBV4hoHAB/4AN7BVYKxA4AOBDwQ+sFVgrEDgA4EPxmntaVZgrMArDAQ+EPhAswJjBcYKBD4Q+MAzDIwVGCsQ+EDgA88wMFZgrEDgA4EPPMPAYQUuKxD4QOADzzBwWIHLCowVCHzgsgKHFbiswFiBwAd+NwwcVqBZgbECgQ8EPnBYgWYFxgoEPhD4wGEFmhUYKxD4QOADhxVoVmCsQOADgQ8cVqBZgbEC/2wsEPhA4AOvMDBWIPCBwAcCH3iFgbECzzAQ+MBlBZoVGCvwDAOBD1xWoFmBsQLPMBD4wGUFmhUYK/AMA4EPXFagWYGxAs8wEPjAZQWaFRgr8AwDgQ9cVqBZgbECzzAQ+MAf4Aa2CowVCHwg8IHAB7YKjBUIfCDwez/1/AVHkr7c/wAAAABJRU5ErkJggg=='); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+padding-bottom: 50px;
+  position: relative;
+  top:80px;
+  
+}
+.af 
+{
+  position: relative;
+  left:3px;
+  bottom:50px;
+  padding-bottom: 70px;
+  
+}
+.ag 
+{
+  position: relative;
+  left:3px;
+  bottom:50px;
+  padding-bottom: 70px;
+  color:white;
+}
+@media screen and (max-width:1000px) {
+  .pin 
+  {
+    
+     position: relative;
+     left: 30px;
+  }
+  .billu 
+  {
+    min-width:160px;
+  }
+  .dudu 
+  {
+    height: 48px;
+    width: 160px;
+  }
+}
+@media screen and (max-width:375px) {
+  .pin 
+  {
+    
+     position: relative;
+     left: 40px;
+  }
+  
+}
