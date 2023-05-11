@@ -123,8 +123,14 @@ function Sidebar(props) {
     </div>
     <div className="side-content1">
       <div className="profile1">
+      {(profile1Url)?
+              // <img className="profile1-img bg-img" src={profile1Url}  />
+              <div className="profile1-img bg-img" style={{backgroundImage:`url(${profile1Url})`}} /> 
+             :
+             <div className="profile1-img bg-img" style={{backgroundImage:`url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2hw0Mq5YNF3BFKPHP5WBxrAOAl1_MdYPxQ&usqp=CAU)`}} /> 
+             }
         
-        <div className="profile1-img bg-img" style={{backgroundImage:`url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2hw0Mq5YNF3BFKPHP5WBxrAOAl1_MdYPxQ&usqp=CAU)`}} />
+        {/* <div className="profile1-img bg-img" style={{backgroundImage:`url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2hw0Mq5YNF3BFKPHP5WBxrAOAl1_MdYPxQ&usqp=CAU)`}} /> */}
         {/* <img className="profile1-img bg-img" src={profile1Url}  /> */}
         <h4>{props.username}</h4>
       

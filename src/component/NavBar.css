@@ -1,6 +1,6 @@
 body{
     overflow-x: hidden;
-    background-color: #fff;
+    background-color: #f7f7f7;
 }
 .navbar 
 {
@@ -111,6 +111,15 @@ body{
         /* right:10px; */
         
     }
+    .ui1{
+        position: relative;
+        margin-top: -100px;
+        left: 250px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
     
     
 }
+

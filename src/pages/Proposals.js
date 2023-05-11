@@ -236,25 +236,22 @@ const Proposals = (props) => {
           marrysentReqMem.length === 0 && !flag &&
 
           
-  <div className="" 
- 
-  >
+  
+          <div className="" >
 
-<h3 style={{margin:"auto",
-           marginLeft:"100px",
-          justifyContent:"center"
-    }}>You don't have any sent proposals!</h3>
-
-  <img style={{
-    height:"70%",
-    width:"70%",
-    marginLeft:"100px",
-    justifyContent:"center"
-  }} src={errorimg}   alt="..." />
-
-
-
-</div>
+          <h3 className="rcb" style={{
+                      marginLeft:"5%",
+                    justifyContent:"center"
+              }}>You don't have any sent requests!</h3>
+          
+            <img style={{
+              height:"50%",
+              width:"50%",
+              marginLeft:"25%",
+              justifyContent:"center"
+            }} src={errorimg}   alt="..." />
+          
+          </div>
 
        
         }
@@ -322,25 +319,22 @@ const Proposals = (props) => {
             {
           marryreceivedReqMem.length === 0 && 
 
-          <div className="" 
- 
-          >
-        
-        <h3 style={{margin:"auto",
-                   marginLeft:"100px",
-                  justifyContent:"center"
-            }}>You don't have any received proposals!</h3>
-        
-          <img style={{
-            height:"70%",
-            width:"70%",
-            marginLeft:"100px",
+          
+  <div className="" >
+
+  <h3 className="rcb" style={{
+              marginLeft:"5%",
             justifyContent:"center"
-          }} src={errorimg}   alt="..." />
-        
-        
-        
-        </div>
+      }}>You don't have any sent requests!</h3>
+  
+    <img style={{
+      height:"50%",
+      width:"50%",
+      marginLeft:"25%",
+      justifyContent:"center"
+    }} src={errorimg}   alt="..." />
+  
+  </div>
          
           
         }
@@ -400,25 +394,22 @@ const Proposals = (props) => {
     
         {
       marryConnections.length === 0 && 
-      <div className="" 
- 
-      >
-    
-    <h3 style={{margin:"auto",
-               marginLeft:"100px",
-              justifyContent:"center"
-        }}>You don't have any marry proposals!</h3>
-    
-      <img style={{
-        height:"70%",
-        width:"70%",
-        marginLeft:"100px",
-        justifyContent:"center"
-      }} src={errorimg}   alt="..." />
-    
-    
-    
-    </div>
+      
+  <div className="" >
+
+  <h3 className="rcb" style={{
+              marginLeft:"5%",
+            justifyContent:"center"
+      }}>You don't have any sent requests!</h3>
+  
+    <img style={{
+      height:"50%",
+      width:"50%",
+      marginLeft:"25%",
+      justifyContent:"center"
+    }} src={errorimg}   alt="..." />
+  
+  </div>
     }
       <div className="row row-cols-1  row-cols-md-4 ">
     

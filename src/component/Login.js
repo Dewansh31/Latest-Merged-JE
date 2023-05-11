@@ -1,7 +1,7 @@
 import  * as Components from './Components';
 import React,{useState,useEffect} from 'react'
 import './Login.css';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -231,6 +231,8 @@ const storageRef = ref(storage);
 
       return(
         <div className='akj'>
+             
+          
           <Components.Container className='pin'>
               <Components.SignUpContainer signinIn={signIn}>
                   <Components.Form>
@@ -240,17 +242,22 @@ const storageRef = ref(storage);
                       <Components.Input className='billu' type='email' placeholder='Email' value={email}  onChange={(e) => setEmail(e.target.value)} name="email"  />
                       <Components.Input className='billu' type='password' placeholder='Password' value={password}  onChange={(e) => setPassword(e.target.value)} name="password" />
                       <Components.Button className='dudu' onClick={handleSubmit2}>Sign Up</Components.Button>
+
+                      <Components.Anchor ><NavLink  to="/landing"><u>Goto landing page</u></NavLink></Components.Anchor>
+
                   </Components.Form>
               </Components.SignUpContainer>
 
               <Components.SignInContainer signinIn={signIn}>
-                   <Components.Form>
+                   <Components.Form >
                     <h1 className='af'>Login</h1>
                        <Components.Title ></Components.Title>
                        <Components.Input className='billu' type='email' placeholder='Email' value={email}  onChange={(e) => setEmail(e.target.value)} name="email" />
                        <Components.Input className='billu' type='password' placeholder='Password' value={password}  onChange={(e) => setPassword(e.target.value)} name="password"  />
                        <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
                        <Components.Button className='dudu' onClick={handleSubmit} >Login</Components.Button>
+                       <Components.Anchor ><NavLink  to="/landing"><u>Goto landing page</u></NavLink></Components.Anchor>
+
                    </Components.Form>
               </Components.SignInContainer>
 

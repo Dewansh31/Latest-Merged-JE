@@ -85,7 +85,8 @@ const SelfInfo = (props) => {
                 className="rounded-circle mt-5"
                 width="150px"
                 alt='img'
-                src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                src={selected.url}
+                // src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
               />
               <span className="font-weight-bold">{selected.username}</span>
               <span className="text-black-50">{selected.email}</span>

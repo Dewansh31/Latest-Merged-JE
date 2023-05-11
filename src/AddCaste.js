@@ -35,6 +35,7 @@ function AddCaste(props) {
   const [editCity,setEditCity] = useState("");
   const [newcityvalue,setNewCityValue] = useState("");
   const [cities, setCities] = useState([]);
+  const [editVisible,setEditVisible] = useState(false);
 
   const foo = () => {
     var headers = new Headers();
@@ -128,6 +129,8 @@ function AddCaste(props) {
 
             setNewCityValue("")
             setEditCity("")
+
+            setEditVisible(false)
         
 
 
@@ -227,7 +230,10 @@ function AddCaste(props) {
                       data-toggle="tooltip"
                       data-placement="top"
                       title="Edit"
-                      onClick={()=>setEditCity(item)}
+                      onClick={()=>{
+                        setEditCity(item)
+                        setEditVisible(true)
+                      }}
                     >
                       <i class="fa fa-edit"></i>
                     </button>
@@ -281,27 +287,31 @@ function AddCaste(props) {
                 </div>
               </div>
             </div><hr/>
-            <div className="acard" >
-              <div className="acard-body">
-                <h5 className="default-text">Edit Caste</h5>
-            
-                <div className="md-form">
-                  <label htmlFor="defaultForm-email">Caste</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder={editCity}
-                     value={newcityvalue} 
-                     onChange={(e) => setNewCityValue(e.target.value)}
-                  />
-                </div>
-                <div className="text-center mt-2 rk">
-                  <button type="button" class="btn btn-primary" onClick={handleEdit}>
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
+           { editCity &&
+
+<div className="acard" >
+<div className="acard-body">
+  <h5 className="default-text">Edit Caste</h5>
+
+  <div className="md-form">
+    <label htmlFor="defaultForm-email">Caste</label>
+    <input
+      type="text"
+      className="form-control"
+      placeholder={editCity}
+       value={newcityvalue} 
+       onChange={(e) => setNewCityValue(e.target.value)}
+    />
+  </div>
+  <div className="text-center mt-2 rk">
+    <button type="button" class="btn btn-primary" onClick={handleEdit}>
+      Edit
+    </button>
+  </div>
+</div>
+</div>
+
+           }
           </div>
         </div>
       </div>

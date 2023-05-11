@@ -157,17 +157,21 @@ const MyConnection = (props) => {
 
     <div className="" >
 
-    <h3 style={{margin:"auto",
-               marginLeft:"100px",
+    <h3 style={{
+               marginLeft:"5%",
               justifyContent:"center"
         }}>You don't have any connection!</h3>
     
-      <img style={{
+      <img className="errorpng" style={{
         height:"50%",
         width:"50%",
-        marginLeft:"150px",
+        marginLeft:"25%",
         justifyContent:"center"
-      }} src={errorimg}   alt="..." />
+      
+      }
+      
+      
+    }src={errorimg}   alt="..." />
     
     </div>
   }

@@ -42,15 +42,15 @@ export const NavBar = () => {
                 </ul>
               </Col>
               <Col xs={6} md={3} >
-              <ul class="navbar-nav">
-                  {/* <li class="nav-item ">
-                   <NavLink class="nav-link o hue" to="/login" style={{ textDecoration: "none"}}>Log In </NavLink>
+              <ul class="navbar-nav ui1">
+                  <li class="nav-item ">
+                   <NavLink class="o hue" to="/login">Log In  </NavLink>
                   </li>
                   <li class="nav-item ">
-                    <NavLink class="nav-link o hef" to="/login">|</NavLink>
-                  </li> */}
+                    <NavLink class="o hef" to="/login"> | </NavLink>
+                  </li>
                   <li class="nav-item ">
-                    <NavLink class="nav-link o hug" to="/login" >Sign Up  </NavLink>
+                    <NavLink class="o hug" to="/login" > Sign Up </NavLink>
                   </li>
                   </ul>
 

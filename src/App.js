@@ -86,7 +86,7 @@ function App() {
 
 		 { !isAuthenticated && 
 
-			  <Route path='*' element={<Landing />} />
+			  <Route path='*' element={<Login />} />
 
 		  }
 		  

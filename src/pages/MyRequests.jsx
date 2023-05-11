@@ -205,15 +205,15 @@ const MyRequests = (props) => {
 
   <div className="" >
 
-<h3 className="rcb" style={{margin:"auto",
-           marginLeft:"100px",
+<h3 className="rcb" style={{
+            marginLeft:"5%",
           justifyContent:"center"
     }}>You don't have any sent requests!</h3>
 
   <img style={{
-    height:"70%",
-    width:"70%",
-    marginLeft:"100px",
+    height:"50%",
+    width:"50%",
+    marginLeft:"25%",
     justifyContent:"center"
   }} src={errorimg}   alt="..." />
 
@@ -285,23 +285,20 @@ const MyRequests = (props) => {
     {
   receivedReqMem.length === 0 && 
 
-  <div className="" 
- 
-  >
+  
+  <div className="" >
 
-<h3 style={{margin:"auto",
-           marginLeft:"100px",
+<h3 className="rcb" style={{
+            marginLeft:"5%",
           justifyContent:"center"
-    }}>You don't have any received requests!</h3>
+    }}>You don't have any sent requests!</h3>
 
   <img style={{
-    height:"70%",
-    width:"70%",
-    marginLeft:"100px",
+    height:"50%",
+    width:"50%",
+    marginLeft:"25%",
     justifyContent:"center"
   }} src={errorimg}   alt="..." />
-
-
 
 </div>
 
