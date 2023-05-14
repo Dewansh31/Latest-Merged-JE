@@ -86,21 +86,55 @@ function FamilyDetails() {
     <form action="#">
       <div className="user-details">
         <div className="input-box">
-          <span >Father Name</span>
+          <span >Father's Name</span>
           <input type="text" placeholder=" Father's name" required value={fathersName}  onChange={(e) => setFatherName(e.target.value)} name="fathersName"  />
         </div>
         <div className="input-box">
-          <span >Mother Name</span>
+          <span >Mother's Name</span>
           <input type="text" placeholder=" Mother's username" required value={mothersName}  onChange={(e) => setMotherName(e.target.value)} name="mothersName"  />
         </div>
         <div className="input-box">
-          <span >Father Occupation</span>
+          <span >Father's Occupation</span>
           <input type="text" placeholder=" Father's Ocuupation" required value={fatherOccupation}  onChange={(e) => setFatherOccupation(e.target.value)} name="fatherOccupation"  />
         </div>
         <div className="input-box">
-          <span >Mother Occupation</span>
+          <span >Mother's Occupation</span>
           <input type="text" placeholder=" Mother's Ocuupation" required value={motherOccupation}  onChange={(e) => setMotherOccupation(e.target.value)} name="motherOccupation"  />
         </div>
+
+        <div className="input-box">
+          <span >Father's Income</span>
+          <input type="text" placeholder=" Father's Income" required 
+          // value={fatherOccupation}  onChange={(e) => setFatherOccupation(e.target.value)} 
+          name="fatherOccupation"  />
+        </div>
+        <div className="input-box">
+          <span >Mother's Income</span>
+          <input type="text" placeholder=" Mother's Income" required 
+          // value={motherOccupation}  onChange={(e) => setMotherOccupation(e.target.value)} 
+          name="motherOccupation"  />
+        </div>
+
+      
+
+        <select className="form-select input-box" required 
+        // value={gender} onChange={(e) => setGender(e.target.value)} 
+        name="Father's Employment status" aria-label="Default select example">
+      <option selected>Father's Employment status</option>
+      <option value="Employed">Employed</option>
+      <option value="Retired">Retired</option>
+    </select>
+
+        
+
+        <select className="form-select input-box" required 
+        // value={gender} onChange={(e) => setGender(e.target.value)} 
+        name="Mother's Employment status" aria-label="Default select example">
+      <option selected>Mother's Employment status</option>
+      <option value="Employed">Employed</option>
+      <option value="Retired">Retired</option>
+    </select>
+
         <div className="input-box">
           <span >Family Lives</span>
           <input type="text" placeholder=" Family Lives" required value={familyLives}  onChange={(e) => setFLives(e.target.value)} name="familyLives"  />

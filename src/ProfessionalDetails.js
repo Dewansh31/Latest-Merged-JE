@@ -112,6 +112,122 @@ function ProfessionalDetails() {
                 <input type="tel"  maxLength={10} placeholder="phone number" required value={contact}  onChange={(e) => setContact(e.target.value)} name="contact" />
               </div>
             </div>
+
+
+          {/* institution details 1  */}
+          <h5>Current institution </h5>
+
+            <div className="user-details">
+
+             
+        <div className="input-box">
+          <span>Company Name</span>
+          <input type="text" placeholder=" Company name" required 
+          // value={collegeName}  
+          // onChange={(e) => setCollegeName(e.target.value)} 
+          name="Company name" />
+        </div>
+        <div className="input-box">
+          <span>Position</span>
+      
+          <input type="text" placeholder=" Position" required 
+          // value={yop}  
+          // onChange={(e) => setYop(e.target.value)} 
+          name="yop" />
+        </div>
+       
+        <div className="input-box">
+          <span>From</span>
+          <input type="date"
+        
+          name="dob"/>
+        </div>
+
+        <div className="input-box">
+          <span>to</span>
+          <input type="text"
+          placeholder="present"
+          name=""/>
+        </div>
+
+      </div>
+
+         {/* institution details 2  */}
+
+         <h5>Recent institution1 </h5>
+
+         <div className="user-details">
+        <div className="input-box">
+          <span>Company name</span>
+          <input type="text" placeholder=" Company name" required 
+          // value={collegeName}  
+          // onChange={(e) => setCollegeName(e.target.value)} 
+          name="Company name" />
+        </div>
+        <div className="input-box">
+          <span>Position</span>
+      
+          <input type="text" placeholder=" Position" required 
+          // value={yop}  
+          // onChange={(e) => setYop(e.target.value)} 
+          name="Position" />
+        </div>
+       
+        <div className="input-box">
+          <span>From</span>
+          <input type="date"
+        
+          name="dob"/>
+        </div>
+
+        <div className="input-box">
+          <span>To</span>
+          <input type="date"
+        
+          name="dob"/>
+        </div>
+
+      </div>
+         
+          {/* institution details 3  */}
+
+          <h5>Recent institution2 </h5>
+
+          <div className="user-details">
+        <div className="input-box">
+          <span>Company Name</span>
+          <input type="text" placeholder=" Company name" required 
+          // value={collegeName}  
+          // onChange={(e) => setCollegeName(e.target.value)} 
+          name="Company Name" />
+        </div>
+        <div className="input-box">
+          <span>Position</span>
+      
+          <input type="text" placeholder="Position" required 
+          // value={yop}  
+          // onChange={(e) => setYop(e.target.value)} 
+          name="Position" />
+        </div>
+       
+        <div className="input-box">
+          <span>From</span>
+          <input type="date"
+        
+          name="dob"/>
+        </div>
+
+        <div className="input-box">
+          <span>To</span>
+          <input type="date"
+        
+          name="dob"/>
+        </div>
+
+      </div>
+
+
+
             <div className="button">
               <input type="submit" defaultValue="Register" onClick={handleSubmit}/>
               <Alert show={show} variant="success" style={{marginTop:"-20rem"}}>

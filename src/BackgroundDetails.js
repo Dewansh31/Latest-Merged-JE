@@ -19,6 +19,8 @@ function BackgroundDetails() {
   const [rashi,setRashi] = useState("");
   const [religion,setReligion] = useState("");
   const [subcaste,setSubCaste] = useState("");
+  const [manglik,setManglik] = useState("");
+  const [casteList,setCasteList] = useState([]);
 
   useEffect(() => {
 		   getData();
@@ -39,7 +41,8 @@ function BackgroundDetails() {
     caste:caste,
     rashi:rashi,
     religion:religion,
-    subcaste:subcaste
+    subcaste:subcaste,
+    manglik:manglik
     
       
     })
@@ -61,10 +64,31 @@ function BackgroundDetails() {
     setRashi(bgDetailsData.rashi)
     setReligion(bgDetailsData.religion)
     setSubCaste(bgDetailsData.subcaste)
+    setManglik(bgDetailsData.manglik)
+
+    // console.log( manglik);
     
   
 
   }
+
+  const fetchCastes = async () => {
+   
+    const docRef = doc(firestore, `admindata`, "castedata")
+    const docSnap = await getDoc(docRef)
+  
+    const data = docSnap.exists() ? docSnap.data() : null
+  
+    if (data === null || data === undefined) return null
+  
+    
+    setCasteList(data.castes);
+
+
+    
+  
+    };
+
 
 
   const handleSubmit = (e) =>{
@@ -74,6 +98,12 @@ function BackgroundDetails() {
     setShow(true)
     getData();
   }
+
+  useEffect(() => {
+    fetchCastes()
+    // getData();
+    }, [casteList]);
+
 
   return (
     <div>
@@ -97,10 +127,19 @@ function BackgroundDetails() {
       </select>
 
        
-        <div className="input-box">
+        {/* <div className="input-box">
           <span>Caste</span>
           <input type="text" placeholder=" caste" required value={caste}  onChange={(e) => setCaste(e.target.value)} name="caste" />
-        </div>
+        </div> */}
+
+     <select className="form-select input-box" required value={caste}  onChange={(e) => setCaste(e.target.value)} name="caste" aria-label="Default select example">
+        <option selected>Castes</option>
+        {
+          casteList.map((item) => (
+        <option value={item}>{item}</option>
+          ))}
+       
+      </select>
         <div className="input-box">
           <span>Sub Caste</span>
           <input type="text" placeholder=" sub caste" required value={subcaste}  onChange={(e) => setSubCaste(e.target.value)} name="subcaste" />
@@ -109,8 +148,8 @@ function BackgroundDetails() {
           <span className="details">Rashi</span>
           <input type="text" placeholder=" rashi" required value={rashi}  onChange={(e) => setRashi(e.target.value)} name="rashi" />
         </div> */}
-        <select className="form-select input-box" required value={rashi} onChange={(e) => setRashi(e.target.value)} name="pob" aria-label="Default select example">
-        <option selected>Rashi</option>
+        <select className="form-select input-box"  value={rashi} onChange={(e) => setRashi(e.target.value)} name="pob" >
+        <option >Rashi</option>
         <option value="Mesh">Mesh</option>
         <option value="Vrishabh">Vrishabh</option>
         <option value="Mithun">Mithun</option>
@@ -125,6 +164,16 @@ function BackgroundDetails() {
         <option value="Meen">Meen</option>
        
       </select>
+
+      
+      <select className="form-select input-box" required 
+        value={manglik} onChange={(e) => setManglik(e.target.value)} 
+        name="Father's Employment status" aria-label="Default select example">
+      <option selected>Manglik/Non-Manglik</option>
+      <option value="Manglik">Manglik</option>
+      <option value="Non-Manglik">Non-Manglik</option>
+    </select>
+    
       
       </div>
       <div className="button">
