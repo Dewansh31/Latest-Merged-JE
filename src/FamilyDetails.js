@@ -19,6 +19,12 @@ function FamilyDetails() {
   const [mothersName,setMotherName] = useState("");
   const [motherOccupation,setMotherOccupation] = useState("");
   const [fatherOccupation,setFatherOccupation] = useState("");
+
+  const [fathersIncome,setFatherIncome] = useState("");
+  const [mothersIncome,setMotherIncome] = useState("");
+  const [motherES,setMotherES] = useState("");
+  const [fatherES,setFatherES] = useState("");
+
   const [familyLives,setFLives] = useState("");
   const [familyType,setFType] = useState("");
 
@@ -32,7 +38,7 @@ function FamilyDetails() {
   const auth = getAuth();
   const user = auth.currentUser;
 
-  // collection(firestore,`users/${username}/basicDetails`)
+
 
   const writeData =  async () =>{
    const docRef = doc (firestore,`users`,`${user.displayName}`);
@@ -42,8 +48,13 @@ function FamilyDetails() {
     mothersName:mothersName,
     fatherOccupation:fatherOccupation,
     motherOccupation:motherOccupation,
+    fatherincome:fathersIncome,
+    motherincome:mothersIncome,
+    fatheremploymentstatus:fatherES,
+    motheremploymentstatus:motherES,
     familyLives:familyLives,
     familyType:familyType
+
     })
    
    
@@ -62,6 +73,12 @@ function FamilyDetails() {
     setMotherName(familyDetailsData.mothersName)
     setFatherOccupation(familyDetailsData.fatherOccupation)
     setMotherOccupation(familyDetailsData.motherOccupation)
+
+    setFatherIncome(familyDetailsData.fatherincome)
+    setMotherIncome(familyDetailsData.motherincome)
+    setFatherES(familyDetailsData.fatheremploymentstatus)
+    setMotherES(familyDetailsData.motheremploymentstatus)
+
     setFLives(familyDetailsData.familyLives)
     setFType(familyDetailsData.familyType)
 
@@ -87,39 +104,16 @@ function FamilyDetails() {
       <div className="user-details">
         <div className="input-box">
           <span >Father's Name</span>
-          <input type="text" placeholder=" Father's name" required value={fathersName}  onChange={(e) => setFatherName(e.target.value)} name="fathersName"  />
+          <input type="text" placeholder=" Father's name"  value={fathersName}  onChange={(e) => setFatherName(e.target.value)} name="fathersName"  />
         </div>
         <div className="input-box">
           <span >Mother's Name</span>
-          <input type="text" placeholder=" Mother's username" required value={mothersName}  onChange={(e) => setMotherName(e.target.value)} name="mothersName"  />
-        </div>
-        <div className="input-box">
-          <span >Father's Occupation</span>
-          <input type="text" placeholder=" Father's Ocuupation" required value={fatherOccupation}  onChange={(e) => setFatherOccupation(e.target.value)} name="fatherOccupation"  />
-        </div>
-        <div className="input-box">
-          <span >Mother's Occupation</span>
-          <input type="text" placeholder=" Mother's Ocuupation" required value={motherOccupation}  onChange={(e) => setMotherOccupation(e.target.value)} name="motherOccupation"  />
+          <input type="text" placeholder=" Mother's username"  value={mothersName}  onChange={(e) => setMotherName(e.target.value)} name="mothersName"  />
         </div>
 
-        <div className="input-box">
-          <span >Father's Income</span>
-          <input type="text" placeholder=" Father's Income" required 
-          // value={fatherOccupation}  onChange={(e) => setFatherOccupation(e.target.value)} 
-          name="fatherOccupation"  />
-        </div>
-        <div className="input-box">
-          <span >Mother's Income</span>
-          <input type="text" placeholder=" Mother's Income" required 
-          // value={motherOccupation}  onChange={(e) => setMotherOccupation(e.target.value)} 
-          name="motherOccupation"  />
-        </div>
-
-      
-
-        <select className="form-select input-box" required 
-        // value={gender} onChange={(e) => setGender(e.target.value)} 
-        name="Father's Employment status" aria-label="Default select example">
+        <select className="form-select input-box" 
+        value={fatherES} onChange={(e) => setFatherES(e.target.value)} 
+        name="fatherES" >
       <option selected>Father's Employment status</option>
       <option value="Employed">Employed</option>
       <option value="Retired">Retired</option>
@@ -128,15 +122,71 @@ function FamilyDetails() {
         
 
         <select className="form-select input-box" required 
-        // value={gender} onChange={(e) => setGender(e.target.value)} 
-        name="Mother's Employment status" aria-label="Default select example">
+        value={motherES} onChange={(e) => setMotherES(e.target.value)} 
+        name="motherES" >
       <option selected>Mother's Employment status</option>
       <option value="Employed">Employed</option>
       <option value="Retired">Retired</option>
     </select>
 
+
+
+
+         {(fatherES == "Employed")?
+             <>
+             <div className="input-box">
+          <span >Father's Occupation</span>
+          <input type="text" placeholder=" Father's Ocuupation" value={fatherOccupation}  onChange={(e) => setFatherOccupation(e.target.value)} name="fatherOccupation"  />
+        </div>
+        
+        </>
+
+             :
+             <>
+              </>
+             }
+
+{(motherES == "Employed")?
+             <>
+          
         <div className="input-box">
-          <span >Family Lives</span>
+          <span >Mother's Occupation</span>
+          <input type="text" placeholder=" Mother's Ocuupation" value={motherOccupation}  onChange={(e) => setMotherOccupation(e.target.value)} name="motherOccupation"  />
+        </div>
+        </>
+
+             :
+             <>
+              </>
+             }
+
+        {/* <div className="input-box">
+          <span >Father's Occupation</span>
+          <input type="text" placeholder=" Father's Ocuupation" value={fatherOccupation}  onChange={(e) => setFatherOccupation(e.target.value)} name="fatherOccupation"  />
+        </div>
+        <div className="input-box">
+          <span >Mother's Occupation</span>
+          <input type="text" placeholder=" Mother's Ocuupation" value={motherOccupation}  onChange={(e) => setMotherOccupation(e.target.value)} name="motherOccupation"  />
+        </div> */}
+
+        <div className="input-box">
+          <span >   {(fatherES == "Employed")? "Father's Income" : "Father's Pension" } </span>
+          <input type="text" placeholder=" Father's Income"
+          value={fathersIncome}  onChange={(e) => setFatherIncome(e.target.value)} 
+          name="fathersIncome"  />
+        </div>
+        <div className="input-box">
+          <span >  {(motherES == "Employed")? "Mother's Income" : "Mother's Pension" } </span>
+          <input type="text" placeholder=" Mother's Income" 
+          value={mothersIncome}  onChange={(e) => setMotherIncome(e.target.value)} 
+          name="mothersIncome"  />
+        </div>
+
+      
+        {/* <h6 >Father's Employment status</h6> */}
+       
+        <div className="input-box">
+          <span >Family Lives (origin) </span>
           <input type="text" placeholder=" Family Lives" required value={familyLives}  onChange={(e) => setFLives(e.target.value)} name="familyLives"  />
         </div>
         <div className="input-box">

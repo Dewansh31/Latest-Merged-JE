@@ -6,13 +6,8 @@ import { app } from './firebase';
 import { getAuth } from "firebase/auth";
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBBtn
-} from 'mdb-react-ui-kit';
+
+import { MDBAccordion, MDBAccordionItem, MDBIcon } from 'mdb-react-ui-kit';
 
 const firestore = getFirestore(app)
 
@@ -58,12 +53,12 @@ function EducationDetails() {
     degree:degree,
     percent:percent,
 
-    schoolName12:schoolName12,
+    school12:schoolName12,
     yop12:yop12,
     board12:board12,
     percent12:percent12,
 
-    schoolName10:schoolName10,
+    school10:schoolName10,
     yop10:yop10,
     board10:board10,
     percent10:percent10
@@ -87,12 +82,12 @@ function EducationDetails() {
     setDegree(edDetailsData.degree)
     setPercent(edDetailsData.percent)
 
-    setSchoolName12(edDetailsData.schoolName12)
+    setSchoolName12(edDetailsData.school12)
     setYop12(edDetailsData.yop12)
     setBoard12(edDetailsData.board12)
     setPercent12(edDetailsData.percent12)
 
-    setSchoolName10(edDetailsData.schoolName10)
+    setSchoolName10(edDetailsData.school10)
     setYop10(edDetailsData.yop10)
     setBoard10(edDetailsData.board10)
     setPercent10(edDetailsData.percent10)
@@ -118,9 +113,8 @@ function EducationDetails() {
   <div className="content33">
     <form action="#">
 
-    
-      <h5 style={{margin:"auto",justifyContent:"center"}}>Higher Education</h5>
-      
+    <MDBAccordion >
+      <MDBAccordionItem collapseId={1} headerTitle={<><MDBIcon fas icon="question-circle" /> &nbsp; Higher Education</>}>
       <div className="user-details">
         <div className="input-box">
           <span>College Name</span>
@@ -159,9 +153,8 @@ function EducationDetails() {
         </div>
 
       </div>
-
-      <h5 style={{margin:"auto",justifyContent:"center"}}>Higher Secondary (12th) </h5>
-
+      </MDBAccordionItem>
+      <MDBAccordionItem collapseId={2} headerTitle={<><MDBIcon fas icon="question-circle" /> &nbsp; Higher Secondary (12th)</>}>
       <div className="user-details">
         <div className="input-box">
           <span>School Name</span>
@@ -170,7 +163,7 @@ function EducationDetails() {
         <div className="input-box">
           <span>Year Of Passing</span>
       
-          <input type="text" placeholder=" year of passing" required value={yop10}  onChange={(e) => setYop10(e.target.value)} name="yop" />
+          <input type="text" placeholder=" year of passing" required value={yop12}  onChange={(e) => setYop12(e.target.value)} name="yop" />
         </div>
        
         <div className="input-box">
@@ -186,9 +179,8 @@ function EducationDetails() {
         </div>
 
       </div>
-
-      <h5 style={{margin:"auto",justifyContent:"center"}}>High School (10th) </h5>
-
+      </MDBAccordionItem>
+      <MDBAccordionItem collapseId={3} headerTitle={<><MDBIcon fas icon="question-circle" /> &nbsp; High School (10th)</>}>
       <div className="user-details">
         <div className="input-box">
           <span>school Name</span>
@@ -213,6 +205,12 @@ function EducationDetails() {
         </div>
 
       </div>
+      </MDBAccordionItem>
+    </MDBAccordion>
+
+    
+
+
 
       <div className="button">
         <input type="submit" defaultValue="Register" onClick={handleSubmit} />

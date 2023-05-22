@@ -19,7 +19,7 @@ function BackgroundDetails() {
   const [rashi,setRashi] = useState("");
   const [religion,setReligion] = useState("");
   const [subcaste,setSubCaste] = useState("");
-  const [manglik,setManglik] = useState("");
+  const [manglikstatus,setManglikstatus] = useState("");
   const [casteList,setCasteList] = useState([]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function BackgroundDetails() {
     rashi:rashi,
     religion:religion,
     subcaste:subcaste,
-    manglik:manglik
+    manglikstatus:manglikstatus
     
       
     })
@@ -64,7 +64,7 @@ function BackgroundDetails() {
     setRashi(bgDetailsData.rashi)
     setReligion(bgDetailsData.religion)
     setSubCaste(bgDetailsData.subcaste)
-    setManglik(bgDetailsData.manglik)
+    setManglikstatus(bgDetailsData.manglikstatus)
 
     // console.log( manglik);
     
@@ -166,14 +166,34 @@ function BackgroundDetails() {
       </select>
 
       
-      <select className="form-select input-box" required 
-        value={manglik} onChange={(e) => setManglik(e.target.value)} 
-        name="Father's Employment status" aria-label="Default select example">
+      <select className="form-select input-box"  
+        value={manglikstatus} onChange={(e) => setManglikstatus(e.target.value)} 
+        name="Father's Employment status" >
       <option selected>Manglik/Non-Manglik</option>
       <option value="Manglik">Manglik</option>
       <option value="Non-Manglik">Non-Manglik</option>
     </select>
+
+
+   
+        
+
+
+          {/* <input type="file" className="input-box" style={{marginTop:"3%"}} name="kundli" placeholder="Add profile picture" defaultValue="fdsa"
+ 
+           /> */}
+ 
+          
+ <div className='input-box' style={{marginTop:"3%"}}>
+ <label for="files" class="btn">Upload Kundli</label>
+  <input id="files" style={{visibility:"hidden"}} type="file"/>
+
+</div>
+
+
     
+    
+
       
       </div>
       <div className="button">

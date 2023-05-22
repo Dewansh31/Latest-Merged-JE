@@ -726,6 +726,11 @@ function Search() {
                 <u><h5 className="text-right" style={{fontWeight:"bold",fontFamily:"Palatino",color:"red"}}>Eductional Details</h5></u>
               </div>
               <div className="row mt-2">
+
+              <div className="d-flex justify-content-between align-items-center mt-3">
+                <u><h6 className="text-right" style={{fontWeight:"bold",fontFamily:"Palatino",color:"green"}}>Higher Education</h6></u>
+              </div>
+
                 <div className="col-md-6">
                 <h6 style={{fontFamily:"Palatino"}}>College Name : {selected.collegeName}</h6>
                  
@@ -737,7 +742,61 @@ function Search() {
                 <div className="col-md-6">
                 <h6 style={{fontFamily:"Palatino"}}>Degree: {selected.degree}</h6>
                  
+                </div> 
+
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>Percent: {selected.percent}</h6>
+                 
                 </div>  
+
+                <hr/>
+
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                <u><h6 className="text-right" style={{fontWeight:"bold",fontFamily:"Palatino",color:"green"}}>Higher Secondary</h6></u>
+              </div>
+
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>School Name : {selected.school12}</h6>
+                 
+                </div>
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>Year Of Passing: {selected.yop12}</h6>
+                
+                </div>
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>Board: {selected.board12}</h6>
+                 
+                </div> 
+
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>Percent: {selected.percent12}</h6>
+                 
+                </div> 
+
+                <hr/>
+
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                <u><h6 className="text-right" style={{fontWeight:"bold",fontFamily:"Palatino",color:"green"}}>High school</h6></u>
+              </div>
+
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>School Name : {selected.school10}</h6>
+                 
+                </div>
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>Year Of Passing: {selected.yop10}</h6>
+                
+                </div>
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>Board: {selected.board10}</h6>
+                 
+                </div> 
+
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>Percent: {selected.percent10}</h6>
+                 
+                </div> 
+
               </div>
 
               <div className="d-flex justify-content-between align-items-center mt-3">
@@ -745,7 +804,7 @@ function Search() {
               </div>
               <div className="row mt-2">
                 <div className="col-md-6">
-                  <h6 style={{fontFamily:"Palatino"}}>Employed In: {selected.workplace}</h6>
+                  <h6 style={{fontFamily:"Palatino"}}>workplace: {selected.workplace}</h6>
                   
                 </div>
                 <div className="col-md-6">
@@ -756,6 +815,21 @@ function Search() {
                  <h6 style={{fontFamily:"Palatino"}}>Phone Number: {selected.contact}</h6>
                   
                 </div>  
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}> Employed In: {selected.currentcompany}</h6>
+                  
+                </div>
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}> Emp. From: {selected.from}</h6>
+                 
+                </div>
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Position: {selected.position}</h6>
+                  
+                </div>  
+
+
+
               </div>
               
               
@@ -784,10 +858,89 @@ function Search() {
                  <h6 style={{fontFamily:"Palatino"}}>Rashi: {selected.rashi}</h6>
                 
                 </div>
+
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Manglik status: {selected.manglikstatus}</h6>
+                
+                </div>
+
                 <div className="d-flex justify-content-between align-items-center experience mt-3">
                 <u><h5 style={{fontWeight:"bold",fontFamily:"Palatino",color:"red"}}><span>Family Details</span></h5></u>
               </div>
               <div className="row mt-2">
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Father Name: {selected.fathersName}</h6>
+                  
+                </div>
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>Mother Name: {selected.mothersName}</h6>
+                 
+                </div>
+                {/* <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Father Occupation:{selected.fatherOccupation}</h6>
+                
+                </div>
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Mother Occupation: {selected.motherOccupation}</h6>
+                 
+                </div>
+
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Father Income:{selected.fatherincome}</h6>
+                
+                </div>
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Mother Income: {selected.motherincome}</h6>
+                 
+                </div> */}
+
+{(selected.fatheremploymentstatus == "Employed")?
+                   
+                   <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>Father Occupation:{selected.fatherOccupation}</h6>
+                
+                </div>
+                :
+                <></>
+                }
+
+                              
+              {(selected.motheremploymentstatus == "Employed")?
+              <div className="col-md-6">
+              <h6 style={{fontFamily:"Palatino"}}>Mother Occupation: {selected.motherOccupation}</h6>
+              
+             </div>
+              :
+              <></>
+
+              }
+
+                
+
+     
+
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}> {(selected.fatheremploymentstatus == "Employed")? "Father Income:":"Father Pension:"}{selected.fatherincome}</h6>
+                
+                </div>
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>  {(selected.motheremploymentstatus == "Employed")?"Mother Income:":"Mother Pension:"}  {selected.motherincome}</h6>
+                 
+                </div>
+
+
+
+                <div className="col-md-6">
+                <h6 style={{fontFamily:"Palatino"}}>Father status:{selected.fatheremploymentstatus}</h6>
+                 
+                </div>
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>Mother status: {selected.motheremploymentstatus}</h6>
+                 
+                </div>
+                </div>
+
+                {/* <div className="row mt-2">
                 <div className="col-md-6">
                  <h6 style={{fontFamily:"Palatino"}}>Father Name: {selected.fathersName}</h6>
                   
@@ -812,10 +965,64 @@ function Search() {
                   <h6 style={{fontFamily:"Palatino"}}>Family Lives: {selected.familyLives}</h6>
                  
                 </div>
+                </div> */}
+
+<div className="d-flex justify-content-between align-items-center mt-3">
+                <u><h5 className="text-right" style={{fontWeight:"bold",fontFamily:"Palatino",color:"red"}}>Employment History</h5></u>
+              </div>
+
+              <div className="d-flex justify-content-between align-items-center mt-3">
+                <u><h6 className="text-right" style={{fontWeight:"bold",fontFamily:"Palatino",color:"green"}}>Past Company 1</h6></u>
+              </div>
+
+
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>Company : {selected.recentcompany1}</h6>
+                  
                 </div>
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>position: {selected.position1}</h6>
+                 
+                </div>
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>From: {selected.from1}</h6>
+                  
+                </div>  
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>To: {selected.to1}</h6>
+                  
+                </div>  
+
+                <hr/>
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                <u><h6 className="text-right" style={{fontWeight:"bold",fontFamily:"Palatino",color:"green"}}>Past Company 2</h6></u>
+              </div>
+
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>Company : {selected.recentcompany2}</h6>
+                  
+                </div>
+                <div className="col-md-6">
+                  <h6 style={{fontFamily:"Palatino"}}>position: {selected.position2}</h6>
+                 
+                </div>
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>From: {selected.from2}</h6>
+                  
+                </div>  
+                <div className="col-md-6">
+                 <h6 style={{fontFamily:"Palatino"}}>To: {selected.to2}</h6>
+                  
+                </div>  
+
+
+              
                 
                 </div>
             </div>
+
+           
+            
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { app } from './firebase';
 import { getAuth } from "firebase/auth";
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
 
 const firestore = getFirestore(app)
 
@@ -17,6 +18,21 @@ function ProfessionalDetails() {
   const [workplace,setWorkPlace] = useState("");
   const [income,setIncome] = useState("");
   const [contact,setContact] = useState("");
+
+  const [currentcompany,setcurrentcompnay] = useState("");
+  const [position,setPosition] = useState("");
+  const [from,setFrom] = useState("");
+  const [to,setTo] = useState("present");
+
+  const [rc1,setrc1] = useState("");
+  const [position1,setPosition1] = useState("");
+  const [from1,setFrom1] = useState("");
+  const [to1,setTo1] = useState("");
+
+  const [rc2,setrc2] = useState("");
+  const [position2,setPosition2] = useState("");
+  const [from2,setFrom2] = useState("");
+  const [to2,setTo2] = useState("");
 
   useEffect(() => {
 		   getData();
@@ -36,7 +52,22 @@ function ProfessionalDetails() {
  
      workplace:workplace,
      income:income,
-     contact:contact
+     contact:contact,
+
+     currentcompany:currentcompany,
+     position:position,
+     from:from,
+     to:to,
+
+     recentcompany1:rc1,
+     position1:position1,
+     from1:from1,
+     to1:to1,
+
+     recentcompany2:rc2,
+     position2:position2,
+     from2:from2,
+     to2:to2,
     
       
     })
@@ -58,6 +89,22 @@ function ProfessionalDetails() {
     setWorkPlace(proDetailsData.workplace)
     setIncome(proDetailsData.income)
     setContact(proDetailsData.contact)
+
+    setcurrentcompnay(proDetailsData.currentcompany)
+    setPosition(proDetailsData.position)
+    setFrom(proDetailsData.from)
+    setTo(proDetailsData.to)
+
+    setrc1(proDetailsData.recentcompany1)
+    setPosition1(proDetailsData.position1)
+    setFrom1(proDetailsData.from1)
+    setTo1(proDetailsData.to1)
+
+    setrc2(proDetailsData.recentcompany2)
+    setPosition2(proDetailsData.position2)
+    setFrom2(proDetailsData.from2)
+    setTo2(proDetailsData.to2)
+    
     
    
 
@@ -114,117 +161,123 @@ function ProfessionalDetails() {
             </div>
 
 
-          {/* institution details 1  */}
-          <h5>Current institution </h5>
+        
 
-            <div className="user-details">
+        <MDBAccordion  >
+      <MDBAccordionItem collapseId={1} headerTitle='Current institution'>
+      <div className="user-details">
 
              
-        <div className="input-box">
-          <span>Company Name</span>
-          <input type="text" placeholder=" Company name" required 
-          // value={collegeName}  
-          // onChange={(e) => setCollegeName(e.target.value)} 
-          name="Company name" />
-        </div>
-        <div className="input-box">
-          <span>Position</span>
-      
-          <input type="text" placeholder=" Position" required 
-          // value={yop}  
-          // onChange={(e) => setYop(e.target.value)} 
-          name="yop" />
-        </div>
-       
-        <div className="input-box">
-          <span>From</span>
-          <input type="date"
-        
-          name="dob"/>
-        </div>
+<div className="input-box">
+  <span>Company Name</span>
+  <input type="text" placeholder=" Company name" required 
+  value={currentcompany}  
+  onChange={(e) => setcurrentcompnay(e.target.value)} 
+  name="Company name" />
+</div>
+<div className="input-box">
+  <span>Position</span>
 
-        <div className="input-box">
-          <span>to</span>
-          <input type="text"
-          placeholder="present"
-          name=""/>
-        </div>
+  <input type="text" placeholder=" Position" required 
+  value={position}  
+  onChange={(e) => setPosition(e.target.value)} 
+  name="yop" />
+</div>
 
-      </div>
+<div className="input-box">
+  <span>From</span>
+  <input type="date"
+   value={from}  
+   onChange={(e) => setFrom(e.target.value)} 
 
-         {/* institution details 2  */}
+  name="dob"/>
+</div>
 
-         <h5>Recent institution1 </h5>
+<div className="input-box">
+  <span>to</span>
+  <input type="text"
+  placeholder="present"
+  name=""/>
+</div>
 
-         <div className="user-details">
+</div>
+      </MDBAccordionItem>
+      <MDBAccordionItem collapseId={2} headerTitle='Recent institution 1'>
+      <div className="user-details">
         <div className="input-box">
           <span>Company name</span>
           <input type="text" placeholder=" Company name" required 
-          // value={collegeName}  
-          // onChange={(e) => setCollegeName(e.target.value)} 
+          value={rc1}  
+          onChange={(e) => setrc1(e.target.value)} 
           name="Company name" />
         </div>
         <div className="input-box">
           <span>Position</span>
       
           <input type="text" placeholder=" Position" required 
-          // value={yop}  
-          // onChange={(e) => setYop(e.target.value)} 
+          value={position1}  
+          onChange={(e) => setPosition1(e.target.value)} 
           name="Position" />
         </div>
        
         <div className="input-box">
           <span>From</span>
           <input type="date"
-        
+           value={from1}  
+           onChange={(e) => setFrom1(e.target.value)} 
           name="dob"/>
         </div>
 
         <div className="input-box">
           <span>To</span>
           <input type="date"
-        
+          value={to1}  
+          onChange={(e) => setTo1(e.target.value)} 
           name="dob"/>
         </div>
 
       </div>
-         
-          {/* institution details 3  */}
-
-          <h5>Recent institution2 </h5>
-
-          <div className="user-details">
+      </MDBAccordionItem>
+      <MDBAccordionItem collapseId={3} headerTitle='Recent institution 2'>
+      <div className="user-details">
         <div className="input-box">
           <span>Company Name</span>
           <input type="text" placeholder=" Company name" required 
-          // value={collegeName}  
-          // onChange={(e) => setCollegeName(e.target.value)} 
+          value={rc2}  
+          onChange={(e) => setrc2(e.target.value)} 
           name="Company Name" />
         </div>
         <div className="input-box">
           <span>Position</span>
       
           <input type="text" placeholder="Position" required 
-          // value={yop}  
-          // onChange={(e) => setYop(e.target.value)} 
+          value={position2}  
+          onChange={(e) => setPosition2(e.target.value)} 
           name="Position" />
         </div>
        
         <div className="input-box">
           <span>From</span>
           <input type="date"
-        
+           value={from2}  
+           onChange={(e) => setFrom2(e.target.value)} 
           name="dob"/>
         </div>
 
         <div className="input-box">
           <span>To</span>
           <input type="date"
+           value={to2}  
+           onChange={(e) => setTo2(e.target.value)} 
         
           name="dob"/>
         </div>
-
-      </div>
+        </div>
+        
+      </MDBAccordionItem>
+    </MDBAccordion>
+ 
+  
 
 
 
@@ -241,6 +294,7 @@ function ProfessionalDetails() {
         </div>
       </Alert>
             </div>
+         
           </form>
         </div>
       </div>

@@ -162,7 +162,95 @@ function Signup() {
       toastSuccess()
       const user = res.user;
       // console.log(user);
-      writeData();
+      // writeData();
+
+      if(role === "admin"){
+
+      
+        const userRef = collection(firestore, `admins`);
+        
+        await setDoc(doc(userRef, `${username}`), {
+          username:username,
+          email:email,
+          password:password,
+          fullName:"",
+          dob:"",
+          gender:"",
+          phone:"",
+          role:role,
+          url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2hw0Mq5YNF3BFKPHP5WBxrAOAl1_MdYPxQ&usqp=CAU"
+      });
+      
+      
+          }else{
+      
+            const userRef = collection(firestore, `users`);
+        
+            await setDoc(doc(userRef, `${username}`), {
+              username:username,
+              email:email,
+              password:password,
+              active:true,
+              role:role,
+              fullName:"",
+              dob:"",
+              pob:"",
+              gender:"",
+              phone:"",
+              height:"",
+              collegeName:"",
+              yop:"",
+              degree:"",
+              percent:"",
+              school12:"",
+              yop12:"",
+              board12:"",
+              percent12:"",
+              school10:"",
+              yop10:"",
+              board10:"",
+              percent10:"",
+              workplace:"",
+              income:"",
+              contact:"",
+              currentcompany:"",
+              position:"",
+              from:"",
+              to:"",
+              recentcompany1:"",
+              position1:"",
+              from1:"",
+              to1:"",
+              recentcompany2:"",
+              position2:"",
+              from2:"",
+              to2:"",
+              fathersName:"",
+              mothersName:"",
+              fatherOccupation:"",
+              motherOccupation:"",
+              familyLives:"",
+              familyType:"",
+              fatherincome:"",
+              motherincome:"",
+              fatheremploymentstatus:"",
+              motheremploymentstatus:"",
+              religion:"",
+              caste:"",
+              subcaste:"",
+              rashi:"",
+              manglikstatus:"",
+              connections:[],
+              sentrequests:[],
+              receivedrequests:[],
+              marryconnections:[],
+              marrysent:[],
+              marryreceived:[],
+              url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2hw0Mq5YNF3BFKPHP5WBxrAOAl1_MdYPxQ&usqp=CAU"
+          });
+          
+      
+          }
     
 
       if(role == "admin"){
