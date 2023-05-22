@@ -16,7 +16,7 @@ import { app } from '../firebase';
 import { getAuth } from "firebase/auth";
 import './selfInfo.css'
 import { Link, NavLink } from 'react-router-dom';
-import Spinner from '../Spinner';
+
 
 const firestore = getFirestore(app)
 
