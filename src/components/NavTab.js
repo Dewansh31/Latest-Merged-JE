@@ -30,8 +30,8 @@ const NavTab = (props) => {
     <label htmlFor="tab4" className='label1'>4</label>
     <input className="inp" id="tab5" type="radio" name="tabs" />
     <label htmlFor="tab5" className='label1'>5</label>
-    <input className="inp" id="tab6" type="radio" name="tabs" />
-    <label htmlFor="tab6" className='label1'>6</label>
+    {/* <input className="inp" id="tab6" type="radio" name="tabs" />
+    <label htmlFor="tab6" className='label1'>6</label> */}
 
 
     <section id="content1" className='section1'>
@@ -49,9 +49,9 @@ const NavTab = (props) => {
     <section id="content5" className='section1'>
     <BackgroundDetails/>
     </section>
-    <section id="content6" className='section1'>
+    {/* <section id="content6" className='section1'>
       <ImgSection/>
-    </section>
+    </section> */}
     
   </main>
 </div>

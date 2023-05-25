@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import { MDBBtn } from 'mdb-react-ui-kit';
 import errorimg from '../images/err.png'
 import Spinner from "../Spinner";
+import addNotification from 'react-push-notification';
+import { useTranslation } from 'react-i18next'
 
 const db = getFirestore(app)
 
@@ -20,6 +22,17 @@ const MyConnection = (props) => {
   const [tUser,setTUser] = useState(null);
   const [flag,setFlag] = useState(true)
 
+  const { t } = useTranslation();
+
+  const clickToNotify = () =>{
+    addNotification({
+      title:'code with rk',
+      message:'visit my channel',
+      duration:4000,
+      native:true,
+      onClick: ()=> console.log('Push Notification'),
+    });
+}
 
 
   const handleMarrySent = async () => {
@@ -130,6 +143,7 @@ const MyConnection = (props) => {
 
     useEffect(() => {
       fetchConnections();
+      clickToNotify()
       // console.log(loggedInUser);  
       }, [mconnections]);
     
@@ -144,7 +158,7 @@ const MyConnection = (props) => {
      <div >
 
      <div className="page-header" style={{padding:"0 0 0 0",position:"relative"}}>
-        <h3 style={{padding:"10px 50px ",margin:"auto"}}>My connections</h3>
+        <h3 style={{padding:"10px 50px ",margin:"auto"}}>{t('My connections')}</h3>
        
       </div>
      {/* <h2>My connections</h2> */}
@@ -160,7 +174,7 @@ const MyConnection = (props) => {
     <h3 style={{
                marginLeft:"5%",
               justifyContent:"center"
-        }}>You don't have any connection!</h3>
+        }}> {t(`text1`)}!</h3>
     
       <img className="errorpng" style={{
         height:"50%",

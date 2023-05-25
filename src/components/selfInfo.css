@@ -11,6 +11,8 @@
     color: navy;
     margin-top: 7%;
 }
+
+
 @media screen and (max-width: 650px) {
     .selfInfoBody{
         margin-left: 0;

@@ -11,11 +11,33 @@ import { app } from './firebase';
 import Form from 'react-bootstrap/Form';
 import { MDBTooltip } from 'mdb-react-ui-kit';
 import Button from 'react-bootstrap/Button';
-
+import { useTranslation } from 'react-i18next'
 
 const firestore = getFirestore(app);
 
 function Sidebar(props) {
+
+    // Contains the value and text for the options
+const languages = [
+  { value: 'en', text: "Choose Language" },
+  { value: 'en', text: "English" },
+  { value: 'hi', text: "Hindi" },
+  { value: 'bn', text: "Bengali" },
+  { value: 'ur', text: "Urdu" }
+]
+
+   // It is a hook imported from 'react-i18next'
+   const { t } = useTranslation(); 
+  
+   const [lang, setLang] = useState('en');
+ 
+   // This function put query that helps to 
+   // change the language
+   const handleChange = e => { 
+       setLang(e.target.value);
+       let loc = "http://localhost:3000/";
+       window.location.replace(loc + "?lng=" + e.target.value);
+   }
 
   const toastSuccess = () => toast.success('Logged out successfully!');
 
@@ -140,32 +162,32 @@ function Sidebar(props) {
           <li>
             <NavLink  to="/dashboard" activeClassName="active">
               <span className="las la-home" />
-              <h6 className="smallc" style={{textDecoration:"none"}}>Dashboard</h6>
+              <h6 className="smallc" style={{textDecoration:"none"}}> {t('Dashboard')} </h6>
             </NavLink >
           </li>
           <li>
             <NavLink  to="/selfinfo" activeClassName="active">
               <span className="las la-user-alt" />
-              <h6 className="smallc">My profile1</h6>
+              <h6 className="smallc"> {t('My profile')} </h6>
             </NavLink >
           </li>
           <li>
             <NavLink to="/myconnections" activeClassName="active">
               <span className="las la-envelope" />
-              <h6 className="smallc">My Connections</h6>
+              <h6 className="smallc"> {t('My Connections')} </h6>
             </NavLink>
           </li>
           <li>
             <NavLink to="/myrequests" activeClassName="active">
               <span className="las la-clipboard-list" />
-              <h6 className="smallc">Requests</h6>
+              <h6 className="smallc"> {t('Requests')} </h6>
             </NavLink>
           </li>
         
           <li>
             <NavLink to="/myproposals" activeClassName="active">
               <span className="las la-clipboard-list" />
-              <h6 className="smallc">Proposals</h6>
+              <h6 className="smallc"> {t('Proposals')} </h6>
             </NavLink>
           </li>
 
@@ -184,10 +206,20 @@ function Sidebar(props) {
           <span className="las la-bars" />
         </label>
 
+        <div style={{margin:"0 5px"}}>
+                 <select value={lang} onChange={handleChange}>
+                {languages.map(item => {
+                    return (<option key={item.value} 
+                    value={item.value}>{item.text}</option>);
+                })}
+            </select>
+                 </div>
 
         <div className="header-menu">
          
      <div  style={{alignItems:"center",justifyContent:"center"}}>
+
+ 
 
      <MDBTooltip  wrapperProps={{ color: 'secondary' }} placement='bottom' title='Uncheck this to deactivate your account!'>
         
@@ -214,7 +246,7 @@ function Sidebar(props) {
           {/* <span class="badge badge-danger"> */}
             <div className="user" onClick={handleLogout}>
                       <span className="las la-power-off" />
-                      <span><b>Logout</b></span>
+                      <span><b>{t('Logout')}</b></span>
           </div>
           {/* </span> */}
       </Button>

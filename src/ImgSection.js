@@ -26,6 +26,8 @@ const ImgSection = () => {
 
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrl, setImageUrl] = useState();
+  const [pdfUpload, setPdfUpload] = useState(null);
+  const [pdfUrl, setPdfUrl] = useState("");
   const [show, setShow] = useState(false);
 
   const auth = getAuth();
@@ -63,6 +65,38 @@ const ImgSection = () => {
 
    }
 
+   const writeData2 =  async (e) =>{
+    e.preventDefault();
+
+    const docRef = doc (firestore,`users`,`${user.displayName}`);
+
+    if (pdfUpload == null) return;
+
+    const pdfRef = ref(storage, `${user.displayName}/kundali`);
+
+    uploadBytes(pdfRef, pdfUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setPdfUrl(url);
+        console.log(url);
+        
+    });
+
+   
+    
+
+});
+
+      
+        await updateDoc(docRef,  {
+        
+            kundaliUrl:pdfUrl
+          })
+
+          setShow(true)
+  
+
+   }
+
 
 
 
@@ -78,9 +112,16 @@ const ImgSection = () => {
           setImageUpload(event.target.files[0]);
           }} />
 
+          
+   <input type="file"  onChange={(event) => {
+          setImageUpload(event.target.files[1]);
+          }} />
+
    </div>
    <div className="button">
-     <input type="submit" defaultValue="Register" onClick={writeData}/>
+     <input type="submit" value="Upload DP" onClick={writeData}/>
+     <hr/>
+     <input type="submit" value="Upload Kundali" onClick={writeData2}/>
      <Alert show={show} variant="success" style={{marginTop:"-20rem"}}>
      <h5>Profile Image updated successfully!</h5>
      

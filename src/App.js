@@ -37,8 +37,34 @@ import { Login } from './component/Login';
 // import { Home } from './component/Home'
 import Landing from './Landing';
 
+//translator...
+import { useTranslation } from 'react-i18next'
+import Plan from './pages/Plan';
+  
+  
+// Contains the value and text for the options
+const languages = [
+    { value: 'en', text: "Options" },
+    { value: 'en', text: "English" },
+    { value: 'hi', text: "Hindi" },
+    { value: 'bn', text: "Bengali" }
+]
+
 
 function App() {
+
+	 // It is a hook imported from 'react-i18next'
+	 const { t } = useTranslation(); 
+  
+	 const [lang, setLang] = useState('en');
+   
+	 // This function put query that helps to 
+	 // change the language
+	 const handleChange = e => { 
+		 setLang(e.target.value);
+		 let loc = "http://localhost:3000/";
+		 window.location.replace(loc + "?lng=" + e.target.value);
+	 }
 
 	const [isAuthenticated,setIsAuthenticated] = useState(false);
 	const [userName, setUserName] = useState("");
@@ -147,6 +173,7 @@ function App() {
 				  <Route path="/myconnections" element={<MyConnection  name={userName}/>} />
 				  <Route path="/myrequests" element={<MyRequests name={userName} />} />
 				  <Route path="/myproposals" element={<Proposals name={userName} />} />
+				  <Route path="/upgrade" element={<Plan name={userName} />} />
 				  <Route path="/couples" element={<Couples name={userName} />} />
 				  <Route path='/error' element={<ErrorPage/>} />
 				  {/* <Route path='*' element={<Navigate to='/error' />} /> */}

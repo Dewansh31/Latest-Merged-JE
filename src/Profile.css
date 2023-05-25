@@ -159,6 +159,9 @@ form .user-details .input-box{
     .formcontainer {
       max-width: 400px;
     }
+   .loading{
+      margin-left: 25%;
+    }
   .formcontainer .content33 .category{
     flex-direction: column;
   }

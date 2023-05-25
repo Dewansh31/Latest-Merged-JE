@@ -23,11 +23,38 @@ function Profile(props) {
   const [gender,setGender] = useState("");
   const [phone,setPhone] = useState("");
   const [height,setHeight] = useState("");
+  const [cities, setCities] = useState([]);
 
-  useEffect(() => {
-		   getData();
-        // eslint-disable-next-line
-	  }, []);
+
+  const foo = () => {
+    var headers = new Headers();
+    headers.append(
+      "X-CSCAPI-KEY",
+      "ZjV4eWVjaEpBZkFrVTk1N2VUaGhOeGNPQ2dDeGliMlBtUzFRaWo3Rw=="
+    );
+
+    var requestOptions = {
+      method: "GET",
+      headers: headers,
+      redirect: "follow"
+    };
+
+    fetch(
+      "https://api.countrystatecity.in/v1/countries/IN/cities",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        //    for (let i = 0; i < result.length; i++) {
+        //         console.log(result[i].name)
+        // }
+        setCities(result);
+        // console.log(result)
+      })
+      .catch((error) => console.log("error", error));
+  }
+
+ 
 
 
 
@@ -75,8 +102,13 @@ function Profile(props) {
     writeData();
     setShow(true)
     getData();
+  
   }
   
+  useEffect(() => {
+    getData()
+    foo() 
+    }, []);
 
   return (
     <div>
@@ -97,18 +129,12 @@ function Profile(props) {
           <span className="details">Place Of Birth</span>
           <input type="text" placeholder="birth place" required value={pob}  onChange={(e) => setPOB(e.target.value)} name="pob" />
         </div> */}
-        <select className="form-select input-box" required value={pob} onChange={(e) => setPOB(e.target.value)} name="pob" aria-label="Default select example">
+          <select className="form-select input-box" required value={pob} onChange={(e) => setPOB(e.target.value)} name="pob" aria-label="Default select example">
         <option selected>Place Of Birth</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Delhi">Delhi</option>
-        <option value="Bangalore">Bangalore</option>
-        <option value="Kolkata">Kolkata</option>
-        <option value="Hyderabad">Hyderabad</option>
-        <option value="Gujarat">Gujarat</option>
-        <option value="Lucknow">Lucknow</option>
-        <option value="Chennai">Chennai</option>
-        <option value="Punjab">Punjab</option>
-        <option value="Pune">Pune</option>
+       { cities.map((item) => (
+        <option value={item.name}>{item.name}</option>
+          ))}
+        
       </select>
         
       <select className="form-select input-box" required value={gender} onChange={(e) => setGender(e.target.value)} name="gender" aria-label="Default select example">

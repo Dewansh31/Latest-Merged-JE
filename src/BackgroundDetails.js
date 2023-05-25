@@ -6,15 +6,39 @@ import { app } from './firebase';
 import { getAuth } from "firebase/auth";
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import { auth } from "./firebase";
+import { addDoc } from "firebase/firestore";
+import { collection, setDoc } from "firebase/firestore"; 
+import {
+  MDBBtn,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+} from 'mdb-react-ui-kit';
+
+import {
+    ref,
+    uploadBytes,
+    getDownloadURL,
+    listAll,
+    list,
+  } from "firebase/storage";
+  import { storage } from "./firebase";
 
 const firestore = getFirestore(app);
+
+const storageRef = ref(storage);
 
 function BackgroundDetails() {
 
   const [show, setShow] = useState(false);
 
  
-
+  const [toggleOneModal, setToggleOneModal] = useState(false);
   const [caste,setCaste] = useState("");
   const [rashi,setRashi] = useState("");
   const [religion,setReligion] = useState("");
@@ -22,17 +46,47 @@ function BackgroundDetails() {
   const [manglikstatus,setManglikstatus] = useState("");
   const [casteList,setCasteList] = useState([]);
 
-  useEffect(() => {
-		   getData();
-      // eslint-disable-next-line 
-	  }, []);
+  const [pdfUpload, setPdfUpload] = useState(null);
+  const [pdfUrl, setPdfUrl] = useState();
 
+  const [show2, setShow2] = useState(false);
+  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUrl, setImageUrl] = useState();
 
 
   const auth = getAuth();
   const user = auth.currentUser;
 
+  const writeData2 =  async (e) =>{
+    e.preventDefault();
 
+
+    if (imageUpload == null) return;
+
+    const imageRef = ref(storage, `${user.displayName}/kundali`);
+
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrl(url);
+        console.log(url);
+        
+    });
+
+   
+    
+
+});
+           
+    const docRef = doc (firestore,`users`,`${user.displayName}`);
+      
+        await updateDoc(docRef,  {
+            KundaliUrl:imageUrl
+          })
+
+          setShow2(true)
+  
+
+   }
 
   const writeData =  async () =>{
    const docRef = doc (firestore,`users`,`${user.displayName}`);
@@ -90,15 +144,53 @@ function BackgroundDetails() {
     };
 
 
+  //   const uploadKundli =  async (e) =>{
+  //     e.preventDefault();
+  
+  //     const docRef = doc (firestore,`users`,`${user.displayName}`);
+  
+  //     if (pdfUpload == null) return;
+  
+  //     const pdfRef = ref(storage, `${user.displayName}/kundali`);
+  
+  //     uploadBytes(pdfRef, pdfUpload).then((snapshot) => {
+  //       getDownloadURL(snapshot.ref).then((url) => {
+  //         setPdfUrl(url);
+  //         console.log(url);
+          
+  //     });
+  
+     
+      
+  
+  // });
+  
+        
+  //         await updateDoc(docRef,  {
+  //             kundaliUrl:pdfUrl
+  //           })
+  
+  //           setShow(true)
+    
+  
+  //    }
+
+
 
   const handleSubmit = (e) =>{
     e.preventDefault();
 
     writeData();
+  
     setShow(true)
     getData();
   }
 
+  useEffect(() => {
+    getData();
+   // eslint-disable-next-line 
+ }, []);
+  
   useEffect(() => {
     fetchCastes()
     // getData();
@@ -185,10 +277,59 @@ function BackgroundDetails() {
  
           
  <div className='input-box' style={{marginTop:"3%"}}>
- <label for="files" class="btn">Upload Kundli</label>
-  <input id="files" style={{visibility:"hidden"}} type="file"/>
-
+ 
+ <MDBBtn onClick={() => setToggleOneModal(!toggleOneModal)}>Upload Kundali</MDBBtn>
 </div>
+
+<MDBModal show={toggleOneModal} setShow={setToggleOneModal} tabIndex='-1'>
+        <MDBModalDialog centered>
+          <MDBModalContent>
+            <MDBModalHeader>
+              <MDBModalTitle>Upload your kundali</MDBModalTitle>
+              <MDBBtn
+                className='btn-close'
+                color='none'
+                onClick={() => setToggleOneModal(!toggleOneModal)}
+              ></MDBBtn>
+            </MDBModalHeader>
+            <MDBModalBody>
+            <div className="formcontainer">
+<div className="title">Kundali</div>
+<div className="content33">
+ <form action="#">
+   <div className="user-details">
+  
+   <input type="file"  onChange={(event) => {
+          setImageUpload(event.target.files[0]);
+          }} />
+
+          
+
+   </div>
+   <div className="button">
+     <input type="submit" value="Upload" onClick={writeData2}/>
+   
+     <Alert show={show2} variant="success" style={{marginTop:"-20rem"}}>
+     <h5>Kundali uploaded successfully!</h5>
+     
+     <hr />
+     <div className="d-flex justify-content-end">
+       <Button onClick={() => setShow2(false)} variant="outline-success">
+         Close
+       </Button>
+     </div>
+   </Alert>
+   </div>
+ </form>
+</div>
+</div>
+            </MDBModalBody>
+            <MDBModalFooter>
+              
+            </MDBModalFooter>
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
 
 
     

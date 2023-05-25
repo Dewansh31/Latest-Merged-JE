@@ -10,10 +10,13 @@ import {arrayUnion, arrayRemove } from "firebase/firestore";
 import { MDBBtn } from 'mdb-react-ui-kit';
 import errorimg from '../images/err.png'
 import Spinner from '../Spinner';
+import { useTranslation } from 'react-i18next'
 
 const db = getFirestore(app)
 
 const Proposals = (props) => {
+
+    const { t } = useTranslation();
 
     const [marrysentReqMem,setmarrysentReqMem] = useState([]);
     const [marryreceivedReqMem,setmarryreceivedReqMem] = useState([]);
@@ -221,11 +224,11 @@ const Proposals = (props) => {
                 
               <div className="tabset">
           <input type="radio" name="tabset" id="tab1" aria-controls="marzen" defaultChecked />
-          <label htmlFor="tab1">Sent</label>
+          <label htmlFor="tab1"> {t('Sent')} </label>
           <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier" />
-          <label htmlFor="tab2">Received</label>
+          <label htmlFor="tab2"> {t('Received')} </label>
           <input type="radio" name="tabset" id="tab3" aria-controls="mconn" />
-          <label htmlFor="tab3">Marry Connection</label>
+          <label htmlFor="tab3"> {t('Marry Connections')} </label>
          
           <div className="tab-panels">
             <section id="marzen" className="tab-panel">
@@ -242,7 +245,7 @@ const Proposals = (props) => {
           <h3 className="rcb" style={{
                       marginLeft:"5%",
                     justifyContent:"center"
-              }}>You don't have any sent requests!</h3>
+              }}>{t(`You haven't sent any proposal!`)}</h3>
           
             <img style={{
               height:"50%",
@@ -325,7 +328,7 @@ const Proposals = (props) => {
   <h3 className="rcb" style={{
               marginLeft:"5%",
             justifyContent:"center"
-      }}>You don't have any sent requests!</h3>
+      }}>{t(`You haven't received any proposal!`)}</h3>
   
     <img style={{
       height:"50%",
@@ -400,7 +403,7 @@ const Proposals = (props) => {
   <h3 className="rcb" style={{
               marginLeft:"5%",
             justifyContent:"center"
-      }}>You don't have any sent requests!</h3>
+      }}>{t(`You don't have any marry connection yet!`)}</h3>
   
     <img style={{
       height:"50%",

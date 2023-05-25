@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useRef} from 'react'
 import "./Home.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,8 +6,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import { useTranslation } from 'react-i18next'
 
 import Col from 'react-bootstrap/Col';
+import emailjs from '@emailjs/browser';
+
 export const Home = () => {
   let settings = {
     dots: true,
@@ -17,6 +20,27 @@ export const Home = () => {
     slidesToScroll: 1,
     cssEase: "linear"
 }
+
+const form = useRef();
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.sendForm('service_rcjdn39', 'template_vpjo9wi', form.current, 'A03lDvvoTStlqxznW')
+    .then((result) => {
+        console.log(result.text);
+        console.log("message sent");
+    }, (error) => {
+        console.log(error.text);
+    });
+  }
+
+const { t } = useTranslation();
+
+
+
+
+
  
   return (
     <><div class="rk22">
@@ -29,13 +53,13 @@ export const Home = () => {
         <Col xs={6} md={2}>
           <h1 className="rr ao">Find Your</h1>
           <p className="rr ap">SoulmateHere!</p>
-          <button type='button' className='kes'>  Enquire Now</button>
+          <button type='button' className='kes'> {t('Enquire Now')} </button>
         </Col>
       </Row>
     </Container>
     </div>
     <section className='hf'>
-    <h1 className='a'>Weddings</h1><div>
+    <h1 className='a'>{t('Weddings')}</h1><div>
       <section class="articles">
         <article>
           <div class="article-wrapper">
@@ -43,7 +67,7 @@ export const Home = () => {
               <img src="https://image3.jdomni.in/banner/12082021/6A/EA/5B/1E613A67473798A4B7F55C4251_1628768361873.jpg?output-format=webp" alt="" className='img2'/>
             </figure>
             <div class="article-body">
-              <h2>Cutes Couples</h2>
+              <h2>{t('Cute Couples')} </h2>
               <p style={{textAlign:"center"}}>
                 congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
               </p>
@@ -63,7 +87,7 @@ export const Home = () => {
               <img src="https://image2.jdomni.in/banner/12082021/0D/64/7B/56BDD752E7B04D069F2901A60F_1628769026338.jpg?output-format=webp" alt="" className='img2'/>
             </figure>
             <div class="article-body">
-              <h2>Shaddi MAIN Dekho</h2>
+              <h2> {t('Shaddi MAIN Dekho')} </h2>
               <p style={{textAlign:"center"}}>
                 congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
               </p>
@@ -83,7 +107,7 @@ export const Home = () => {
               <img src="https://image3.jdomni.in/banner/12082021/2B/65/38/55959E589A5BCD0967CD713FAB_1628768531605.jpg?output-format=webp" alt="" className='img2' />
             </figure>
             <div class="article-body">
-              <h2>Haath Thaam le</h2>
+              <h2> {t('Haath Thaam le')} </h2>
               <p style={{textAlign:"center"}}>
                 congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
               </p>
@@ -101,7 +125,7 @@ export const Home = () => {
       </div>
       </section>     
       <section className='kitu'>
-        <h1 className='hab'>Profile Picture</h1>
+        <h1 className='hab'>{t('Profile Picture')} </h1>
           <Slider {...settings} className='mona' >
           
             <div className="cardd-wrapper">
@@ -166,8 +190,8 @@ export const Home = () => {
            
               <Col xs={4}>
               
-              <h1 className='my' id='aboutus'>AboutUs</h1>
-                  <p className='c'>We, Perfectmatch.com, situated at Malad West, Mumbai, Maharashtra realize that marriage, being one of the most important and sacred events in every culture, is not only the union of two individual souls but also of two families. We are the pioneer and prominent matrimonial services provider of efficient and reliable matrimonial services including match making, personal consultancy and other related allied services to individuals living in the country. Our company works diligently to create a rich and enormous database of high profile clients. Our teams are well versed in the dynamics of the marriage system of every community. We have dedicated teams that work meticulously in order to cater to the requirements of various categories of clients.</p>
+              <h1 className='my' id='aboutus'> {t('AboutUs')} </h1>
+                  <p className='c'>{t('aboutustext')}</p>
               </Col>
               <Col xs={4}>
                 <img src="https://image3.jdomni.in/banner/12082021/6F/9C/AC/BFA71237BD5515D4693C674052_1628765413469.jpg?output-format=webp" className='e' />
@@ -183,7 +207,7 @@ export const Home = () => {
           <section className='noqw'>
           <div class="profile-cardd">
       <div class="container cohna">
-        <h2 class="heading" id='whyus'>WHY US</h2>
+        <h2 class="heading" id='whyus'> {t('WHY US')} </h2>
 
         <div class="cardd-grid">
           <div class="cardd cardd0">
@@ -309,7 +333,7 @@ export const Home = () => {
       </Container>
       </section>
       <section className='chita gang'>
-      <h1 className='aj' id='contactus'>Contact Us</h1>
+      <h1 className='aj' id='contactus'>{t('Contact Us')} </h1>
       <div class="wra">
         <div class="container mai">
             <div class="row ng">
@@ -319,31 +343,59 @@ export const Home = () => {
                    
                 </div>
                 <div class="col-md-6 right">
-                     <div class="input-box55">
-                        <header className='rko'>Contact Us</header>
+                     {/* <div class="input-box55">
+                        <header className='rko'>{t('Contact Us')}</header>
                         <div class="input-field">
                             <input type="text" class="input" id="text" required autocomplete="off" />
-                            <label for="text">Full Name</label>
+                            <label for="text">{t('Full Name')}</label>
                         </div>
                         <div class="input-field">
                             <input type="text" class="input" id="email" required autocomplete="off" />
-                            <label for="email">Email</label>
+                            <label for="email"> {t('Email')} </label>
                         </div>
                         <div class="input-field">
                             <input type="password" class="input" id="phone" required  autocomplete="off"/>
-                            <label for="number">Phone Number</label>
+                            <label for="number"> {t('Phone Number')} </label>
                         </div>
                         <div class="input-field">
                         <textarea class="input" id="exampleFormControlTextarea1" required  autocomplete="off" row="3" />
-                            <label for="text">Message</label>
+                            <label for="text">{t('Message')} </label>
                         </div>
                       
                         <div class="input-field">
-                            <input type="submit" class="submit" value="Send" />
+                            <input type="submit" class="submit" value={t('Send')} />
+                            
+                        </div>
+                       
+                     </div> */}
+
+<form ref={form} onSubmit={sendEmail}>
+                     <div class="input-box55">
+                        <header className='rko'>Contact Us</header>
+                        <div class="input-field">
+                            <input type="text" class="input" id="text" required autocomplete="off" name="user_name" />
+                            <label for="text">{t('Full Name')}</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="input" id="email" required autocomplete="off" name="user_email"/>
+                            <label for="email">{t('Email')} </label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" class="input" id="phone" required  autocomplete="off" name="user_phone"/>
+                            <label for="number">{t('Phone Number')}</label>
+                        </div>
+                        <div class="input-field">
+                        <textarea class="input" id="exampleFormControlTextarea1" required  autocomplete="off" row="3" name="message" />
+                            <label for="text">{t('Message')}</label>
+                        </div>
+                      
+                        <div class="input-field">
+                            <input type="submit" class="submit" value={t('Send')} />
                             
                         </div>
                        
                      </div>
+                     </form>
                 </div>
             </div>
         </div>
@@ -358,16 +410,16 @@ export const Home = () => {
          <Col xs={6} md={4} className='maa'> 
          
            <img src="https://image3.jdomni.in/banner/12082021/E0/EE/48/F434FFCF08C37D2430AE411D63_1628769844054.png?output-format=webp" className='kg'/>
-           <p class="yow">Our Office Address</p>
+           <p class="yow">{t('Our Office Address')}</p>
          <p class="yov">Malad West, Mumbai, Maharashtra </p>
          <img src="https://image3.jdomni.in/banner/12082021/33/C9/A3/B63D8D159012818287F3F730A6_1628769868105.png?output-format=webp" className='kg1'/>
-           <p class="yow1">General Enquiries</p>
+           <p class="yow1">{t('General Enquiries')} </p>
          <p class="yov1">contact@mysites.com</p>
          <img src="https://image2.jdomni.in/banner/12082021/D3/E0/4E/B72756E4920FAB8B4C2D054AEF_1628769879094.png?output-format=webp" className='kg2'/>
-           <p class="yow2">Call Us</p>
+           <p class="yow2">{t('Call Us')}</p>
          <p class="yov2">+91-8888888888</p>
            <img src="https://image3.jdomni.in/banner/12082021/07/E1/76/11D3452A730382447A5B725399_1628769889180.png?output-format=webp" className='kg3'/>
-           <p class="yow3">Our Timing</p>
+           <p class="yow3">{t('Our Timing')} </p>
          <p class="yov3">Mon - Sun : 09:00 AM - 09:00 PM</p>
           
            

@@ -5,7 +5,37 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {BrowserRouter as Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+
+
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next'
+  
+  
+
+
 export const NavBar = () => {
+
+  // Contains the value and text for the options
+const languages = [
+  { value: 'en', text: "Language" },
+  { value: 'en', text: "English" },
+  { value: 'hi', text: "Hindi" },
+  { value: 'bn', text: "Bengali" },
+  { value: 'ur', text: "Urdu" }
+]
+
+   // It is a hook imported from 'react-i18next'
+   const { t } = useTranslation(); 
+  
+   const [lang, setLang] = useState('en');
+ 
+   // This function put query that helps to 
+   // change the language
+   const handleChange = e => { 
+       setLang(e.target.value);
+       let loc = "http://localhost:3000/";
+       window.location.replace(loc + "?lng=" + e.target.value);
+   }
 
   return (
     
@@ -28,7 +58,7 @@ export const NavBar = () => {
               <Col xs={6} md={8} className='ui'>
                 <ul class="navbar-nav">
                    <li class="nav-item a6">
-                   <a class="nav-link  o" aria-current="page" href="#">HOME   </a>
+                   <a class="nav-link  o" aria-current="page" href="#"> HOME  </a>
                   </li>
                   <li class="nav-item a7">
                     <a class="nav-link  o" href="#aboutus">ABOUT US </a>
@@ -52,9 +82,27 @@ export const NavBar = () => {
                   <li class="nav-item ">
                     <NavLink class="o hug" to="/login" > Sign Up </NavLink>
                   </li>
+
+                 <div style={{margin:"0 5px"}}>
+                 <select value={lang} onChange={handleChange}>
+                {languages.map(item => {
+                    return (<option key={item.value} 
+                    value={item.value}>{item.text}</option>);
+                })}
+            </select>
+                 </div>
+
                   </ul>
 
+                 
+
+              </Col >
+              <Col>
+               
+            
+
               </Col>
+
             </Row>
       </Container>
         </div>

@@ -7,6 +7,7 @@ import { auth } from "../firebase";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { getAuth } from "firebase/auth";
+import { useTranslation } from 'react-i18next'
 
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
@@ -31,6 +32,8 @@ const storageRef = ref(storage);
 
  export function Login() {
      const [signIn, toggle] = React.useState(true);
+
+     const { t } = useTranslation();
 
      
   const toastSuccess = () => toast.success('Logged in successfully!');
@@ -164,12 +167,14 @@ const storageRef = ref(storage);
         position2:"",
         from2:"",
         to2:"",
+        kundaliUrl:"",
         fathersName:"",
         mothersName:"",
         fatherOccupation:"",
         motherOccupation:"",
         familyLives:"",
         familyType:"",
+        featured:false,
         fatherincome:"",
         motherincome:"",
         fatheremploymentstatus:"",
@@ -262,27 +267,27 @@ const storageRef = ref(storage);
           <Components.Container className='pin'>
               <Components.SignUpContainer signinIn={signIn}>
                   <Components.Form>
-                  <h1 className='af'>SignUp</h1>
+                  <h1 className='af'>{t('SignUp')}</h1>
                       <Components.Title></Components.Title>
-                      <Components.Input className='billu' type='text' placeholder='User Name' value={username}  onChange={(e) => setUserName(e.target.value)} name="username"   />
-                      <Components.Input className='billu' type='email' placeholder='Email' value={email}  onChange={(e) => setEmail(e.target.value)} name="email"  />
-                      <Components.Input className='billu' type='password' placeholder='Password' value={password}  onChange={(e) => setPassword(e.target.value)} name="password" />
-                      <Components.Button className='dudu' onClick={handleSubmit2}>Sign Up</Components.Button>
+                      <Components.Input className='billu' type='text' placeholder={t('Username')}  value={username}  onChange={(e) => setUserName(e.target.value)} name="username"   />
+                      <Components.Input className='billu' type='email' placeholder={t('Email')} value={email}  onChange={(e) => setEmail(e.target.value)} name="email"  />
+                      <Components.Input className='billu' type='password' placeholder={t('Password')} value={password}  onChange={(e) => setPassword(e.target.value)} name="password" />
+                      <Components.Button className='dudu' onClick={handleSubmit2}>{t('SignUp')}</Components.Button>
 
-                      <Components.Anchor ><NavLink  to="/landing"><u>Goto landing page</u></NavLink></Components.Anchor>
+                      <Components.Anchor ><NavLink  to="/landing"><u>{t('Go to landing page')}</u></NavLink></Components.Anchor>
 
                   </Components.Form>
               </Components.SignUpContainer>
 
               <Components.SignInContainer signinIn={signIn}>
                    <Components.Form >
-                    <h1 className='af'>Login</h1>
+                    <h1 className='af'> {t('Login')}</h1>
                        <Components.Title ></Components.Title>
-                       <Components.Input className='billu' type='email' placeholder='Email' value={email}  onChange={(e) => setEmail(e.target.value)} name="email" />
-                       <Components.Input className='billu' type='password' placeholder='Password' value={password}  onChange={(e) => setPassword(e.target.value)} name="password"  />
-                       <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                       <Components.Button className='dudu' onClick={handleSubmit} >Login</Components.Button>
-                       <Components.Anchor ><NavLink  to="/landing"><u>Goto landing page</u></NavLink></Components.Anchor>
+                       <Components.Input className='billu' type='email' placeholder={t('Email')} value={email}  onChange={(e) => setEmail(e.target.value)} name="email" />
+                       <Components.Input className='billu' type='password' placeholder={t('Password')} value={password}  onChange={(e) => setPassword(e.target.value)} name="password"  />
+                       <Components.Anchor href='#'>{t('Forgot your password?')}</Components.Anchor>
+                       <Components.Button className='dudu' onClick={handleSubmit} > {t('Login')} </Components.Button>
+                       <Components.Anchor ><NavLink  to="/landing"><u>{t('Go to landing page')}</u></NavLink></Components.Anchor>
 
                    </Components.Form>
               </Components.SignInContainer>
@@ -291,24 +296,24 @@ const storageRef = ref(storage);
                   <Components.Overlay signinIn={signIn}>
 
                   <Components.LeftOverlayPanel signinIn={signIn}>
-                  <h1 className='ag'>Welcome Back!</h1>
+                  <h1 className='ag'> {t('Welcome Back!')} </h1>
                       <Components.Title ></Components.Title>
                       <Components.Paragraph>
-                          To keep connected with us please login with your personal info
+                         {t('temp')}
                       </Components.Paragraph>
                       <Components.GhostButton onClick={() => toggle(true)}  className='dudu'>
-                          Sign In
+                      {t('Login')}
                       </Components.GhostButton>
                       </Components.LeftOverlayPanel>
 
                       <Components.RightOverlayPanel signinIn={signIn}>
-                        <h1 className='ag'>Hello, Friend!</h1>
+                        <h1 className='ag'>{t('Hello, Friend!')}</h1>
                         <Components.Title ></Components.Title>
                         <Components.Paragraph>
-                            Enter Your personal details and start journey with us
+                            {t('Enter Your personal details and start journey with us')}
                         </Components.Paragraph>
                             <Components.GhostButton onClick={() => toggle(false)} className='dudu'>
-                                SiginUp
+                            {t('SignUp')}
                             </Components.GhostButton> 
                       </Components.RightOverlayPanel>
   
