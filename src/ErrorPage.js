@@ -19,12 +19,12 @@ const ErrorPage = (props) => {
 
   return (
      <>
-      <h1>404 Error </h1>
+   
 <p class="zoom-area"> The page you are looking for is not found! </p>
 <section class="error-container">
-  <span class="four"><span class="screen-reader-text">4</span></span>
-  <span class="zero"><span class="screen-reader-text">0</span></span>
-  <span class="four"><span class="screen-reader-text">4</span></span>
+  <span class="four"><span class="screen-reader-text">404</span></span>
+  {/* <span class="zero"><span class="screen-reader-text">0</span></span>
+  <span class="four"><span class="screen-reader-text">4</span></span> */}
 </section>
 <div class="link-container">
 {

@@ -28,10 +28,7 @@ function FamilyDetails() {
   const [familyLives,setFLives] = useState("");
   const [familyType,setFType] = useState("");
 
-  useEffect(() => {
-		   getData();
-       // eslint-disable-next-linecd
-	  }, []);
+
 
 
 
@@ -41,7 +38,7 @@ function FamilyDetails() {
 
 
   const writeData =  async () =>{
-   const docRef = doc (firestore,`users`,`${user.displayName}`);
+   const docRef = doc (firestore,`users`,`${user.uid}`);
    await updateDoc(docRef,  {
 
     fathersName:fathersName,
@@ -64,7 +61,7 @@ function FamilyDetails() {
   const getData = async()=>{
 
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const familyDetailsData = docSnap.data();
     // console.log(familyDetailsData);
@@ -94,6 +91,11 @@ function FamilyDetails() {
     setShow(true)
     getData();
   }
+
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-linecd
+ }, []);
 
   return (
     <div>

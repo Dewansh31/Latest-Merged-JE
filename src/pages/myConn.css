@@ -9,8 +9,7 @@
 }
 body {
   background-color: #f5f8ff;
-  /* margin-top: 10px;
-  margin-bottom: 10px; */
+
 }
 
 .errorpng{
@@ -54,7 +53,6 @@ padding: 15px 15px 25px;
 border: 1px solid transparent;
 border-bottom: 0;
 cursor: pointer;
-/* font-weight: 600; */
 }
 
 .tabset > label::after {
@@ -101,9 +99,7 @@ Demo purposes only
 box-sizing: border-box;
 }
 
-/* body {
-padding: 30px;
-} */
+
 
 .tabset {
 max-width: 65em;
@@ -143,7 +139,6 @@ max-width: 65em;
   border: #060047;
   display: flex;
   margin: auto;
-  /* width: fit-content; */
 }
 #search-scontainer input {
   background-color: transparent;
@@ -192,21 +187,20 @@ max-width: 65em;
 }
 .card {
   background-color: #ffffff;
-  /* max-width: 18em; */
   margin-top: 1em;
   padding: 1em;
   border-radius: 2px;
   box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
-  border-radius: 15px;
+
+  border-radius:10px 10px 0  0 ;
 }
-.card:hover{
+/* .card:hover{
   background-color: #ffffff;
-  /* color: #fff; */
   cursor: pointer;
   transform: scale(1.08);
   transition: all 1s ease;
   box-shadow: #cf099a 0px 10px 36px 0px, rgba(121, 2, 105, 0.171) 0px 0px 0px 1px;
-}
+} */
 
 
 

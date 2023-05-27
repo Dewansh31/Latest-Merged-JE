@@ -30,12 +30,13 @@ const languages = [
    const { t } = useTranslation(); 
   
    const [lang, setLang] = useState('en');
+   const [user, setUser] = useState();
  
    // This function put query that helps to 
    // change the language
    const handleChange = e => { 
        setLang(e.target.value);
-       let loc = "http://localhost:3000/";
+       let loc = "https://jodiexpress2.web.app/";
        window.location.replace(loc + "?lng=" + e.target.value);
    }
 
@@ -48,10 +49,10 @@ const languages = [
     const auth = getAuth();
     const user = auth.currentUser;
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const Data = docSnap.data();
-    // console.log(Data.active);
+    console.log(Data);
     setSStatus(Data.active)
 
   }
@@ -65,7 +66,7 @@ const languages = [
     const auth = getAuth();
     const user = auth.currentUser;
   
-     const docRef = doc (firestore,`users`,`${user.displayName}`);
+     const docRef = doc (firestore,`users`,`${user.uid}`);
      await updateDoc(docRef,  {
         active: !sstatus
       })
@@ -85,19 +86,22 @@ const languages = [
   const navigate = useNavigate();
 
   const [UN,setUN] = useState("");
-  const [profile1Url,setprofile1Url] = useState("");
+  const [profile1Url,setprofile1Url] = useState("https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg");
 
   const getPhoto = async()=>{
 
     const auth = getAuth();
     const user = auth.currentUser;
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const bgDetailsData = docSnap.data();
-    // console.log(bgDetailsData.url);
+    console.log(bgDetailsData.url);
+    
+    { bgDetailsData.url &&
+      setprofile1Url(bgDetailsData.url)
+    }
 
-    setprofile1Url(bgDetailsData.url)
     
     
   
@@ -129,7 +133,11 @@ const languages = [
   }
 
   useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
     setUN(props.username);
+    console.log(user);
+    setUser(user)
     getStatus()
     getPhoto();
  }, [sstatus]);
@@ -160,32 +168,32 @@ const languages = [
       <div className="side-menu1u">
         <ul>
           <li>
-            <NavLink  to="/dashboard" activeClassName="active">
+            <NavLink id="RouterNavLink" to="/dashboard" activeClassName="active">
               <span className="las la-home" />
               <h6 className="smallc" style={{textDecoration:"none"}}> {t('Dashboard')} </h6>
             </NavLink >
           </li>
           <li>
-            <NavLink  to="/selfinfo" activeClassName="active">
+            <NavLink id="RouterNavLink" to="/selfinfo" activeClassName="active">
               <span className="las la-user-alt" />
               <h6 className="smallc"> {t('My profile')} </h6>
             </NavLink >
           </li>
           <li>
-            <NavLink to="/myconnections" activeClassName="active">
+            <NavLink id="RouterNavLink" to="/myconnections" activeClassName="active">
               <span className="las la-envelope" />
               <h6 className="smallc"> {t('My Connections')} </h6>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/myrequests" activeClassName="active">
+            <NavLink id="RouterNavLink" to="/myrequests" activeClassName="active">
               <span className="las la-clipboard-list" />
               <h6 className="smallc"> {t('Requests')} </h6>
             </NavLink>
           </li>
         
           <li>
-            <NavLink to="/myproposals" activeClassName="active">
+            <NavLink id="RouterNavLink" to="/myproposals" activeClassName="active">
               <span className="las la-clipboard-list" />
               <h6 className="smallc"> {t('Proposals')} </h6>
             </NavLink>

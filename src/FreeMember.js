@@ -28,6 +28,7 @@ import ProfessionalDetails from './ProfessionalDetails'
 import BackgroundDetails from './BackgroundDetails'
 import Sidebar from './Sidebar';
 import ImgSection from './ImgSection';
+import {getDoc } from "firebase/firestore"; 
 
 const db = getFirestore(app)
 
@@ -60,7 +61,7 @@ function FreeMember(props) {
     var tempmembers1 = [];
     result.forEach((doc) => tempmembers1.push({ ...doc.data(), pid: doc.id }));
 
-    tempmembers1 = tempmembers1.sort((a, b) => Number(b.featured) - Number(a.featured));
+    // tempmembers1 = tempmembers1.sort((a, b) => Number(b.featured) - Number(a.featured));
 
     setMembers(tempmembers1);
     setPrev(tempmembers1);
@@ -143,7 +144,7 @@ function FreeMember(props) {
   const [religion,setReligion] = useState("");
   const [subcaste,setSubCaste] = useState("");
   
-  const docRef = doc (db,`users`,`${selected.username}`);
+  const docRef = doc (db,`users`,`${selected.uid}`);
 
   const writeData =  async () =>{
    
@@ -162,8 +163,12 @@ function FreeMember(props) {
     setGender("")
     setPhone("")
     setHeight("")
+
+    const docRef23 = doc (db,`users`,`${selected.uid}`);
+    const docSnap23 = await getDoc(docRef23);
+    const NAME = docSnap23.data().username;
    
-    alert(`${selected.fullName}'s basic details edited successfully!`)
+    alert(`${NAME}'s basic details edited successfully!`)
   
   }
 
@@ -280,6 +285,7 @@ function FreeMember(props) {
 
   const handleCurrent = (item) =>{
     setSelected(item)
+    console.log(item);
     toggleShow();
   }
 
@@ -291,31 +297,6 @@ function FreeMember(props) {
   // Delete Section - starting
 
 
-  let handleDeleteUser =  (e) => {
-    e.preventDefault();
-
-    
-    // deleteUser(Cuser).then(async() => {
-    //  await deleteDoc(doc(db, "users", `${usertodelete}`));
-    
-    // console.log(`${usertodelete} deleted successfully!`);
-    // //  console.log("account deleted successfully!");
-  
-    // }).catch((error) => {
-    //   console.log(error);
-   
-    // });
-
-    getAuth()
-  .deleteUser('RBM1xVpfcGPBwLcQBDOeqAsYqJ73')
-  .then(() => {
-    alert('Successfully deleted user');
-  })
-  .catch((error) => {
-    alert('Error deleting user:', error);
-  });
-    
-  };
 
 
   // Delete Section - ending
@@ -394,7 +375,7 @@ function FreeMember(props) {
 
               { members.map((item) => (
 
-                <tr key={members.indexOf(item)+1}>
+                <tr key={members.indexOf(item)+1} >
                   <td>{members.indexOf(item)+1}</td>
                   <td>
                     <div className="client">

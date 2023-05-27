@@ -191,7 +191,7 @@ function AddCaste(props) {
 
     {
     cityList.map((item) => (
-   <option value={item}>{item}</option>
+   <option value={item} key={item.id}>{item}</option>
     ))}
     
    </select>

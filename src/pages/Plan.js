@@ -39,7 +39,7 @@ const Plan = (props) => {
 
 
   const writeData =  async () =>{
-    const docRef = doc (firestore,`users`,`${USER.displayName}`);
+    const docRef = doc (firestore,`users`,`${USER.uid}`);
     await updateDoc(docRef,  {
     
         featured:true
@@ -90,7 +90,7 @@ const Plan = (props) => {
     const auth = getAuth();
     const user = auth.currentUser;
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const sdata = docSnap.data();
     setName(sdata.username)

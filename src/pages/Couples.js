@@ -91,7 +91,7 @@ sCouples.map((item) => (
 
  
 
- <div className="col-sm-4 " >
+ <div className="col-sm-4 " key={item.id}>
  <div className="card " style={{width: '100%'}}>
 
     <div className="d-flex flex-row ">

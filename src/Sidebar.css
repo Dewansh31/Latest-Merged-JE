@@ -61,8 +61,8 @@ ul{
 }
 
 
-
-/* .side-header1 {
+/* 
+.side-header1 {
     box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
     background: #060047;
     height: 60px;
@@ -70,9 +70,9 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+}
 
-/* .side-header1 h3, side-head span {
+.side-header1 h3, side-head span {
     color: #cab707;
     font-weight: 150;
     font-style: bold;

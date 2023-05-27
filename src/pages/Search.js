@@ -16,6 +16,7 @@ import {arrayUnion } from "firebase/firestore";
 import Spinner from '../Spinner';
 import errorimg from '../images/err.png'
 import { useTranslation } from 'react-i18next'
+import {getDoc } from "firebase/firestore"; 
 
 
 const db = getFirestore(app)
@@ -261,35 +262,52 @@ function Search() {
    
   }
 
-  // const getsentmembers = async () => {
-
-  //   const auth = getAuth();
-  //   const sender = auth.currentUser;
-  //   return await getDocs(collection(db, `users/${sender.username}/sentrequests`));
-   
-  // };
 
 
-  const handleConnect = async(r) =>{
+
+  const handleConnect = async(receiver) =>{
 
 
     const auth = getAuth();
     const sender = auth.currentUser;
 
-    console.log(`sender : ${sender.displayName}`);
-    console.log(`receiver : ${r.username}`);
+   
+    var p1 = sender.uid;
+    var p2 = receiver.uid;
+
+    console.log(sender.uid);
+    console.log(receiver.uid);
+
+    const docRef = doc (db,`users`,`${p1}`);
+    const docSnap = await getDoc(docRef);
+    const senderName = docSnap.data().username;
+
+    const docRef2 = doc (db,`users`,`${p2}`);
+    const docSnap2 = await getDoc(docRef2);
+    const receiverName = docSnap2.data().username;
+
+
+   var key1 = p1;
+   var obj1 = {};
+   
+   obj1[key1] = senderName;
+
+   var key2 = p2;
+   var obj2 = {};
+   
+   obj2[key2] = receiverName;
 
     // receiving
-     const receivedRef = doc (db,`users`,`${r.username}`);
+     const receivedRef = doc (db,`users/${receiver.uid}`);
       await  updateDoc(receivedRef,  {
-        receivedrequests: arrayUnion(sender.displayName)
+        receivedrequests: arrayUnion(obj1)
        })
     
 
        //sending
-      const sendRef = doc (db,`users`,`${sender.displayName}`);
+      const sendRef = doc (db,`users/${sender.uid}`);
         await updateDoc(sendRef,  {
-        sentrequests: arrayUnion(r.username)
+        sentrequests: arrayUnion(obj2)
        })
 
       //  setShowAlert(true);
@@ -332,6 +350,24 @@ function Search() {
   const [products, setProducts] = useState([]);
   const [searchVal, setSearchVal] = useState("");
   const [flag,setFlag] = useState(true);
+  const [castesList,setCasteList] = useState([])
+
+  const fetchCastes = async () => {
+   
+    const docRef = doc(db, `admindata`, "castedata")
+    const docSnap = await getDoc(docRef)
+  
+    const data = docSnap.exists() ? docSnap.data() : null
+  
+    if (data === null || data === undefined) return null
+  
+    
+    setCasteList(data.castes);
+
+
+    
+  
+    };
 
 
   const getAllmembers = async () => {
@@ -584,7 +620,7 @@ function Search() {
 
   { members.map((item) => (
  
-    <div className="col-sm-4" >
+    <div className="col-sm-4" key={members.indexOf(item)}>
       <div className="card " style={{
         width: '100%',
         borderRadius:"20px",
@@ -652,7 +688,10 @@ function Search() {
   <button className="primary"  onClick={() => handleSelected(item)}>
    {t('Details')}
   </button>
-  <button className="primary ghost" onClick={() => handleConnect(item)} >
+  <button className="primary ghost" onClick={() =>{
+    //  setSelected(item);
+     handleConnect(item)
+  }} >
   {t('Connect')}
   </button>
 </div>

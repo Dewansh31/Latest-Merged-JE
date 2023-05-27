@@ -7,14 +7,11 @@ import Dashboard from './pages/Dashboard';
 import MyConnection from './pages/MyConnection';
 import MyRequests from './pages/MyRequests';
 import NavTab from './components/NavTab'
-// import Signup from './Signup'
-// import Login from './Login'
-// import Swiper from './Swiper'
+
 
 import { useState,useEffect } from 'react';
 import { auth } from "./firebase";
 import ErrorPage from './ErrorPage';
-import DeletePage from './DeletePage';
 import Proposals from './pages/Proposals';
 import Couples from './pages/Couples';
 import SelfInfo from './components/SelfInfo';
@@ -24,17 +21,13 @@ import { useNavigate } from 'react-router-dom';
 
 
 import FreeMember from "./FreeMember";
-// import AddMember from "./AddMember";
 import AddReligion from "./AddReligion";
 import Dashboard2 from "./Dashboard2";
 import PemiumMember from "./PemiumMember";
 import AddCaste from "./AddCaste";
 
 import { Login } from './component/Login';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Footer } from './component/Footer'
-// import { NavBar } from './component/NavBar'
-// import { Home } from './component/Home'
+
 import Landing from './Landing';
 
 //translator...
@@ -62,7 +55,7 @@ function App() {
 	 // change the language
 	 const handleChange = e => { 
 		 setLang(e.target.value);
-		 let loc = "http://localhost:3000/";
+		 let loc = "https://jodiexpress2.web.app/";
 		 window.location.replace(loc + "?lng=" + e.target.value);
 	 }
 
@@ -144,14 +137,12 @@ function App() {
 							  <Route path="/dashboard2" element={<Dashboard2 name={userName}/>} />
 							  <Route path="/addreligion" element={<AddReligion name={userName} />} />
 							  <Route path="/addcaste" element={<AddCaste name={userName} />}/>
-							  {/* <Route path="/addmember" element={<AddMember name={userName} />} /> */}
+							  
 							  <Route path="/freemember" element={<FreeMember name={userName}/>} />
 							  <Route path="/premiummember" element={<PemiumMember name={userName} />} />
 
 							  <Route path="/couples" element={<Couples name={userName} />} />
 							  <Route path='/error' element={<ErrorPage/>} />
-
-							  {/* <Route path='*' element={<Navigate to='/error' />} /> */}
 
 							  </>
 
@@ -176,7 +167,7 @@ function App() {
 				  <Route path="/upgrade" element={<Plan name={userName} />} />
 				  <Route path="/couples" element={<Couples name={userName} />} />
 				  <Route path='/error' element={<ErrorPage/>} />
-				  {/* <Route path='*' element={<Navigate to='/error' />} /> */}
+				
 				  </>
 
 

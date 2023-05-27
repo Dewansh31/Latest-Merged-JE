@@ -63,7 +63,7 @@ function BackgroundDetails() {
 
     if (imageUpload == null) return;
 
-    const imageRef = ref(storage, `${user.displayName}/kundali`);
+    const imageRef = ref(storage, `${user.uid}/kundali`);
 
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
@@ -77,7 +77,7 @@ function BackgroundDetails() {
 
 });
            
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
       
         await updateDoc(docRef,  {
             KundaliUrl:imageUrl
@@ -89,7 +89,7 @@ function BackgroundDetails() {
    }
 
   const writeData =  async () =>{
-   const docRef = doc (firestore,`users`,`${user.displayName}`);
+   const docRef = doc (firestore,`users`,`${user.uid}`);
    await updateDoc(docRef,  {
 
     caste:caste,
@@ -109,7 +109,7 @@ function BackgroundDetails() {
   const getData = async()=>{
 
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const bgDetailsData = docSnap.data();
     // console.log(bgDetailsData);
@@ -186,12 +186,13 @@ function BackgroundDetails() {
     getData();
   }
 
-  useEffect(() => {
-    getData();
-   // eslint-disable-next-line 
- }, []);
+//   useEffect(() => {
+//     getData();
+//    // eslint-disable-next-line 
+//  }, []);
   
   useEffect(() => {
+    getData();
     fetchCastes()
     // getData();
     }, [casteList]);
@@ -278,7 +279,10 @@ function BackgroundDetails() {
           
  <div className='input-box' style={{marginTop:"3%"}}>
  
- <MDBBtn onClick={() => setToggleOneModal(!toggleOneModal)}>Upload Kundali</MDBBtn>
+ <MDBBtn onClick={(e) =>{
+  e.preventDefault()
+   setToggleOneModal(!toggleOneModal)
+ }}>Upload Kundali</MDBBtn>
 </div>
 
 <MDBModal show={toggleOneModal} setShow={setToggleOneModal} tabIndex='-1'>
@@ -289,7 +293,10 @@ function BackgroundDetails() {
               <MDBBtn
                 className='btn-close'
                 color='none'
-                onClick={() => setToggleOneModal(!toggleOneModal)}
+                onClick={(e) => {
+                  e.preventDefault()
+                   setToggleOneModal(!toggleOneModal)
+                 }}
               ></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody>
@@ -307,7 +314,10 @@ function BackgroundDetails() {
 
    </div>
    <div className="button">
-     <input type="submit" value="Upload" onClick={writeData2}/>
+     {/* <input type="submit" value="Upload" onClick={writeData2}/> */}
+     <MDBBtn className='mx-2' color='danger' onClick={writeData2}>
+        Danger
+      </MDBBtn>
    
      <Alert show={show2} variant="success" style={{marginTop:"-20rem"}}>
      <h5>Kundali uploaded successfully!</h5>

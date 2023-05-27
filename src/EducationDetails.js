@@ -32,10 +32,6 @@ function EducationDetails() {
   const [percent10,setPercent10] = useState("");
  
 
-  useEffect(() => {
-		   getData();
-       // eslint-disable-next-line
-	  }, []);
 
 
 
@@ -45,7 +41,7 @@ function EducationDetails() {
 
 
   const writeData =  async () =>{
-   const docRef = doc (firestore,`users`,`${user.displayName}`);
+   const docRef = doc (firestore,`users`,`${user.uid}`);
    await updateDoc(docRef,  {
 
     collegeName:collegeName,
@@ -72,7 +68,7 @@ function EducationDetails() {
   const getData = async()=>{
 
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const edDetailsData = docSnap.data();
     // console.log(edDetailsData);
@@ -105,6 +101,12 @@ function EducationDetails() {
     setShow(true)
     getData();
   }
+
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
+ }, []);
+
 
   return (
     <div>

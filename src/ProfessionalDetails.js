@@ -34,10 +34,6 @@ function ProfessionalDetails() {
   const [from2,setFrom2] = useState("");
   const [to2,setTo2] = useState("");
 
-  useEffect(() => {
-		   getData();
-      // eslint-disable-next-line 
-	  }, []);
 
 
 
@@ -47,7 +43,7 @@ function ProfessionalDetails() {
 
 
   const writeData =  async () =>{
-   const docRef = doc (firestore,`users`,`${user.displayName}`);
+   const docRef = doc (firestore,`users`,`${user.uid}`);
    await updateDoc(docRef,  {
  
      workplace:workplace,
@@ -81,7 +77,7 @@ function ProfessionalDetails() {
   const getData = async()=>{
 
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const proDetailsData = docSnap.data();
     // console.log(proDetailsData);
@@ -118,6 +114,11 @@ function ProfessionalDetails() {
     setShow(true)
     getData();
   }
+
+  useEffect(() => {
+    getData();
+   // eslint-disable-next-line 
+ }, []);
 
 
   return (

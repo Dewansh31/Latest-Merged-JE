@@ -64,7 +64,7 @@ function Profile(props) {
  
 
   const writeData =  async () =>{
-   const docRef = doc (firestore,`users`,`${user.displayName}`);
+   const docRef = doc (firestore,`users`,`${user.uid}`);
    await updateDoc(docRef,  {
       fullName:fullName,
       dob:dob,
@@ -81,7 +81,7 @@ function Profile(props) {
   const getData = async()=>{
 
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const basicDetailsData = docSnap.data();
     // console.log(basicDetailsData);

@@ -33,7 +33,7 @@ const languages = [
    // change the language
    const handleChange = e => { 
        setLang(e.target.value);
-       let loc = "http://localhost:3000/";
+       let loc = "https://jodiexpress2.web.app/";
        window.location.replace(loc + "?lng=" + e.target.value);
    }
 

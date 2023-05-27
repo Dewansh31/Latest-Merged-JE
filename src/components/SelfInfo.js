@@ -60,11 +60,11 @@ const SelfInfo = (props) => {
   const writeData =  async (e) =>{
     e.preventDefault();
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
 
     if (imageUpload == null) return;
 
-    const imageRef = ref(storage, `${user.displayName}/images`);
+    const imageRef = ref(storage, `${user.uid}/images`);
 
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
@@ -96,7 +96,7 @@ const SelfInfo = (props) => {
     const auth = getAuth();
     const user = auth.currentUser;
 
-    const docRef = doc (firestore,`users`,`${user.displayName}`);
+    const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const sdata = docSnap.data();
     setSelected(sdata)
@@ -140,13 +140,30 @@ const SelfInfo = (props) => {
         <div className="row">
           <div className="col-md-3 border-right">
             <div className="d-flex flex-column align-items-center text-center">
-              <img
-                className="dp"
-                width="150px"
-                alt='img'
-                src={selected.url}
-                // src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
-              />
+
+              {  (selected.url) ?
+
+                        (<img
+                        className="dp"
+                        width="150px"
+                        alt='img'
+                        src= {selected.url}
+                        />):(
+
+                          <img
+                          className="dp"
+                          width="150px"
+                          alt='img'
+                          src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                        />  
+
+                        )
+
+              }
+              
+
+
+                  
 
                               <button
                                   class="btn btn-success btn-sm btn-floating"
@@ -186,7 +203,10 @@ const SelfInfo = (props) => {
 
    </div>
    <div className="button">
-     <input type="submit" value="Upload DP" onClick={writeData}/>
+     {/* <input type="submit" value="Upload DP" onClick={writeData}/> */}
+     <MDBBtn className='mx-2' color='danger' onClick={writeData}>
+        Upload
+      </MDBBtn>
      
      <Alert show={show} variant="success" style={{marginTop:"-20rem"}}>
      <h5>Profile Image updated successfully!</h5>
