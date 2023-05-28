@@ -62,27 +62,27 @@ function PemiumMember() {
                     Active
                   </td>
                   <td>
-                  <ul class="d-flex ">
-                              <li class="list-inline-item">
+                  <ul className="d-flex ">
+                              <li className="list-inline-item">
                                 <button
-                                  class="btn btn-success btn-sm btn-floating"
+                                  className="btn btn-success btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Edit"
                                 >
-                                  <i class="fa fa-edit"></i>
+                                  <i className="fa fa-edit"></i>
                                 </button>
                               </li>
-                              <li class="list-inline-item">
+                              <li className="list-inline-item">
                                 <button
-                                  class="btn btn-danger btn-sm btn-floating"
+                                  className="btn btn-danger btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Delete"
                                 >
-                                  <i class="fa fa-trash"></i>
+                                  <i className="fa fa-trash"></i>
                                 </button>
                               </li>
                             </ul>
@@ -113,27 +113,27 @@ function PemiumMember() {
                   </td>
                 
                   <td>
-                  <ul class="d-flex ">
-                              <li class="list-inline-item">
+                  <ul className="d-flex ">
+                              <li className="list-inline-item">
                                 <button
-                                  class="btn btn-success btn-sm btn-floating"
+                                  className="btn btn-success btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Edit"
                                 >
-                                  <i class="fa fa-edit"></i>
+                                  <i className="fa fa-edit"></i>
                                 </button>
                               </li>
-                              <li class="list-inline-item">
+                              <li className="list-inline-item">
                                 <button
-                                  class="btn btn-danger btn-sm btn-floating"
+                                  className="btn btn-danger btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Delete"
                                 >
-                                  <i class="fa fa-trash"></i>
+                                  <i className="fa fa-trash"></i>
                                 </button>
                               </li>
                             </ul>
@@ -163,27 +163,27 @@ function PemiumMember() {
                     Active
                   </td>
                   <td>
-                  <ul class="d-flex ">
-                              <li class="list-inline-item">
+                  <ul className="d-flex ">
+                              <li className="list-inline-item">
                                 <button
-                                  class="btn btn-success btn-sm btn-floating"
+                                  className="btn btn-success btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Edit"
                                 >
-                                  <i class="fa fa-edit"></i>
+                                  <i className="fa fa-edit"></i>
                                 </button>
                               </li>
-                              <li class="list-inline-item">
+                              <li className="list-inline-item">
                                 <button
-                                  class="btn btn-danger btn-sm btn-floating"
+                                  className="btn btn-danger btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Delete"
                                 >
-                                  <i class="fa fa-trash"></i>
+                                  <i className="fa fa-trash"></i>
                                 </button>
                               </li>
                             </ul>

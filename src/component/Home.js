@@ -43,7 +43,7 @@ const { t } = useTranslation();
 
  
   return (
-    <><div class="rk22">
+    <><div className="rk22">
     <div className='bg-img1 bgm'></div>
     <Container>
       <Row>
@@ -60,20 +60,20 @@ const { t } = useTranslation();
     </div>
     <section className='hf'>
     <h1 className='a'>{t('Weddings')}</h1><div>
-      <section class="articles">
+      <section className="articles">
         <article>
-          <div class="article-wrapper">
+          <div className="article-wrapper">
             <figure>
               <img src="https://image3.jdomni.in/banner/12082021/6A/EA/5B/1E613A67473798A4B7F55C4251_1628768361873.jpg?output-format=webp" alt="" className='img2'/>
             </figure>
-            <div class="article-body">
+            <div className="article-body">
               <h2>{t('Cute Couples')} </h2>
               <p style={{textAlign:"center"}}>
                 congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
               </p>
-              <a href="#" class="read-more">
-                Read more <span class="sr-only">about this is some title</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <a href="#" className="read-more">
+                Read more <span className="sr-only">about this is some title</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </a>
@@ -82,18 +82,18 @@ const { t } = useTranslation();
         </article>
         <article>
 
-          <div class="article-wrapper">
+          <div className="article-wrapper">
             <figure>
               <img src="https://image2.jdomni.in/banner/12082021/0D/64/7B/56BDD752E7B04D069F2901A60F_1628769026338.jpg?output-format=webp" alt="" className='img2'/>
             </figure>
-            <div class="article-body">
+            <div className="article-body">
               <h2> {t('Shaddi MAIN Dekho')} </h2>
               <p style={{textAlign:"center"}}>
                 congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
               </p>
-              <a href="#" class="read-more">
-                Read more <span class="sr-only">about this is some title</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <a href="#" className="read-more">
+                Read more <span className="sr-only">about this is some title</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </a>
@@ -102,18 +102,18 @@ const { t } = useTranslation();
         </article>
         <article>
 
-          <div class="article-wrapper">
+          <div className="article-wrapper">
             <figure>
               <img src="https://image3.jdomni.in/banner/12082021/2B/65/38/55959E589A5BCD0967CD713FAB_1628768531605.jpg?output-format=webp" alt="" className='img2' />
             </figure>
-            <div class="article-body">
+            <div className="article-body">
               <h2> {t('Haath Thaam le')} </h2>
               <p style={{textAlign:"center"}}>
                 congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
               </p>
-              <a href="#" class="read-more">
-                Read more <span class="sr-only">about this is some title</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <a href="#" className="read-more">
+                Read more <span className="sr-only">about this is some title</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </a>
@@ -205,68 +205,68 @@ const { t } = useTranslation();
           </div> 
           
           <section className='noqw'>
-          <div class="profile-cardd">
-      <div class="container cohna">
-        <h2 class="heading" id='whyus'> {t('WHY US')} </h2>
+          <div className="profile-cardd">
+      <div className="container cohna">
+        <h2 className="heading" id='whyus'> {t('WHY US')} </h2>
 
-        <div class="cardd-grid">
-          <div class="cardd cardd0">
-            <div class="overlay">
-              <div class="content">
+        <div className="cardd-grid">
+          <div className="cardd cardd0">
+            <div className="overlay">
+              <div className="content">
                 <h2 className='ful'>Kratos</h2>
                 <p className='lul'>"From This Night Forward, The Mark Of Your Terrible Deed Will Be Visible To All. The Ashes Of Your Wife And Child Will Remain Fastened To Your Skin, Never To Be Removed."</p>
-                <a class="learn-more-btn" href="#">Learn More</a>
+                <a className="learn-more-btn" href="#">Learn More</a>
               </div>
-              <div class="icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+              <div className="icons">
+                <a href="#"><i className="fa fa-facebook"></i></a>
+                <a href="#"><i className="fa fa-youtube"></i></a>
+                <a href="#"><i className="fa fa-instagram"></i></a>
+                <a href="#"><i className="fa fa-twitter"></i></a>
               </div>
             </div>
           </div>
-          <div class="cardd cardd1">
-            <div class="overlay">
-              <div class="content">
+          <div className="cardd cardd1">
+            <div className="overlay">
+              <div className="content">
                 <h2 className='ful'>Kratos</h2>
                 <p className='lul'>"From This Night Forward, The Mark Of Your Terrible Deed Will Be Visible To All. The Ashes Of Your Wife And Child Will Remain Fastened To Your Skin, Never To Be Removed."</p>
-                <a class="learn-more-btn" href="#">Learn More</a>
+                <a className="learn-more-btn" href="#">Learn More</a>
               </div>
-              <div class="icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+              <div className="icons">
+                <a href="#"><i className="fa fa-facebook"></i></a>
+                <a href="#"><i className="fa fa-youtube"></i></a>
+                <a href="#"><i className="fa fa-instagram"></i></a>
+                <a href="#"><i className="fa fa-twitter"></i></a>
               </div>
             </div>
           </div>
-          <div class="cardd cardd2">
-            <div class="overlay">
-              <div class="content">
+          <div className="cardd cardd2">
+            <div className="overlay">
+              <div className="content">
                 <h2 className='ful'>Kratos</h2>
                 <p className='lul'>"From This Night Forward, The Mark Of Your Terrible Deed Will Be Visible To All. The Ashes Of Your Wife And Child Will Remain Fastened To Your Skin, Never To Be Removed."</p>
-                <a class="learn-more-btn" href="#">Learn More</a>
+                <a className="learn-more-btn" href="#">Learn More</a>
               </div>
-              <div class="icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+              <div className="icons">
+                <a href="#"><i className="fa fa-facebook"></i></a>
+                <a href="#"><i className="fa fa-youtube"></i></a>
+                <a href="#"><i className="fa fa-instagram"></i></a>
+                <a href="#"><i className="fa fa-twitter"></i></a>
               </div>
             </div>
           </div>
-          <div class="cardd cardd3">
-            <div class="overlay">
-              <div class="content">
+          <div className="cardd cardd3">
+            <div className="overlay">
+              <div className="content">
                 <h2 className='ful'>Kratos</h2>
                 <p className='lul'>"From This Night Forward, The Mark Of Your Terrible Deed Will Be Visible To All. The Ashes Of Your Wife And Child Will Remain Fastened To Your Skin, Never To Be Removed."</p>
-                <a class="learn-more-btn" href="#">Learn More</a>
+                <a className="learn-more-btn" href="#">Learn More</a>
               </div>
-              <div class="icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+              <div className="icons">
+                <a href="#"><i className="fa fa-facebook"></i></a>
+                <a href="#"><i className="fa fa-youtube"></i></a>
+                <a href="#"><i className="fa fa-instagram"></i></a>
+                <a href="#"><i className="fa fa-twitter"></i></a>
               </div>
             </div>
           </div>
@@ -282,45 +282,45 @@ const { t } = useTranslation();
           <img src="https://image2.jdomni.in/banner/12082021/E0/B3/F0/5786DC8ACCB769F95D7B94E399_1628770413058.png?output-format=webp" className='qy12'></img>
         </Col>
         <Col xs={6} md={8} className='lk'>
-        <div class="slider" >
+        <div className="slider" >
   <input type="radio" name="toggle" id="btn-1" checked />
   <input type="radio" name="toggle" id="btn-2" />
   <input type="radio" name="toggle" id="btn-3" />
 
-  <div class="slider-controls">
+  <div className="slider-controls">
     <label for="btn-1"></label>
     <label for="btn-2"></label>
     <label for="btn-3"></label>
   </div>
 
-  <ul class="slides">
-    <li class="slide">
-      <div class="slide-content">
-        <h2 class="slide-title">Slide #1</h2>
-        <p class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dignissimos commodi eos totam perferendis possimus dolorem, deleniti vitae harum? Enim.</p>
-        <a href="#" class="slide-link">Learn more</a>
+  <ul className="slides">
+    <li className="slide">
+      <div className="slide-content">
+        <h2 className="slide-title">Slide #1</h2>
+        <p className="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dignissimos commodi eos totam perferendis possimus dolorem, deleniti vitae harum? Enim.</p>
+        <a href="#" className="slide-link">Learn more</a>
       </div>
-      <p class="slide-image">
+      <p className="slide-image">
         <img src="https://image3.jdomni.in/banner/12082021/6A/EA/5B/1E613A67473798A4B7F55C4251_1628768361873.jpg?output-format=webp" alt="stuff" width="320" height="240" />
       </p>
     </li>
-    <li class="slide">
-      <div class="slide-content">
-        <h2 class="slide-title">Slide #2</h2>
-        <p class="slide-text">Nisi ratione magni ea quis animi incidunt velit voluptate dolorem enim possimus, nam provident excepturi ipsam nihil molestiae minus delectus!</p>
-        <a href="#" class="slide-link">Amazing deal</a>
+    <li className="slide">
+      <div className="slide-content">
+        <h2 className="slide-title">Slide #2</h2>
+        <p className="slide-text">Nisi ratione magni ea quis animi incidunt velit voluptate dolorem enim possimus, nam provident excepturi ipsam nihil molestiae minus delectus!</p>
+        <a href="#" className="slide-link">Amazing deal</a>
       </div>
-      <p class="slide-image">
+      <p className="slide-image">
         <img src="https://image2.jdomni.in/banner/12082021/0D/64/7B/56BDD752E7B04D069F2901A60F_1628769026338.jpg?output-format=webp" alt="stuff" width="320" height="240" />
       </p>
     </li>
-    <li class="slide">
-      <div class="slide-content">
-        <h2 class="slide-title">Slide #3</h2>
-        <p class="slide-text">Quisquam quod ut quasi, vero obcaecati laudantium asperiores corporis ad atque. Expedita fugit dicta maxime vel doloribus sequi, facilis dignissimos.</p>
-        <a href="#" class="slide-link">Get started</a>
+    <li className="slide">
+      <div className="slide-content">
+        <h2 className="slide-title">Slide #3</h2>
+        <p className="slide-text">Quisquam quod ut quasi, vero obcaecati laudantium asperiores corporis ad atque. Expedita fugit dicta maxime vel doloribus sequi, facilis dignissimos.</p>
+        <a href="#" className="slide-link">Get started</a>
       </div>
-      <p class="slide-image">
+      <p className="slide-image">
         <img src="https://image3.jdomni.in/banner/12082021/2B/65/38/55959E589A5BCD0967CD713FAB_1628768531605.jpg?output-format=webp" alt="stuff" width="320" height="240" />
       </p>
     </li>
@@ -334,63 +334,63 @@ const { t } = useTranslation();
       </section>
       <section className='chita gang'>
       <h1 className='aj' id='contactus'>{t('Contact Us')} </h1>
-      <div class="wra">
-        <div class="container mai">
-            <div class="row ng">
-                <div class="col-md-6 side-images">
+      <div className="wra">
+        <div className="container mai">
+            <div className="row ng">
+                <div className="col-md-6 side-images">
                     
                     <img src="" alt=""  className='k12'/>
                    
                 </div>
-                <div class="col-md-6 right">
-                     {/* <div class="input-box55">
+                <div className="col-md-6 right">
+                     {/* <div className="input-box55">
                         <header className='rko'>{t('Contact Us')}</header>
-                        <div class="input-field">
-                            <input type="text" class="input" id="text" required autocomplete="off" />
+                        <div className="input-field">
+                            <input type="text" className="input" id="text" required autocomplete="off" />
                             <label for="text">{t('Full Name')}</label>
                         </div>
-                        <div class="input-field">
-                            <input type="text" class="input" id="email" required autocomplete="off" />
+                        <div className="input-field">
+                            <input type="text" className="input" id="email" required autocomplete="off" />
                             <label for="email"> {t('Email')} </label>
                         </div>
-                        <div class="input-field">
-                            <input type="password" class="input" id="phone" required  autocomplete="off"/>
+                        <div className="input-field">
+                            <input type="password" className="input" id="phone" required  autocomplete="off"/>
                             <label for="number"> {t('Phone Number')} </label>
                         </div>
-                        <div class="input-field">
-                        <textarea class="input" id="exampleFormControlTextarea1" required  autocomplete="off" row="3" />
+                        <div className="input-field">
+                        <textarea className="input" id="exampleFormControlTextarea1" required  autocomplete="off" row="3" />
                             <label for="text">{t('Message')} </label>
                         </div>
                       
-                        <div class="input-field">
-                            <input type="submit" class="submit" value={t('Send')} />
+                        <div className="input-field">
+                            <input type="submit" className="submit" value={t('Send')} />
                             
                         </div>
                        
                      </div> */}
 
 <form ref={form} onSubmit={sendEmail}>
-                     <div class="input-box55">
+                     <div className="input-box55">
                         <header className='rko'>Contact Us</header>
-                        <div class="input-field">
-                            <input type="text" class="input" id="text" required autocomplete="off" name="user_name" />
+                        <div className="input-field">
+                            <input type="text" className="input" id="text" required autocomplete="off" name="user_name" />
                             <label for="text">{t('Full Name')}</label>
                         </div>
-                        <div class="input-field">
-                            <input type="text" class="input" id="email" required autocomplete="off" name="user_email"/>
+                        <div className="input-field">
+                            <input type="text" className="input" id="email" required autocomplete="off" name="user_email"/>
                             <label for="email">{t('Email')} </label>
                         </div>
-                        <div class="input-field">
-                            <input type="password" class="input" id="phone" required  autocomplete="off" name="user_phone"/>
+                        <div className="input-field">
+                            <input type="password" className="input" id="phone" required  autocomplete="off" name="user_phone"/>
                             <label for="number">{t('Phone Number')}</label>
                         </div>
-                        <div class="input-field">
-                        <textarea class="input" id="exampleFormControlTextarea1" required  autocomplete="off" row="3" name="message" />
+                        <div className="input-field">
+                        <textarea className="input" id="exampleFormControlTextarea1" required  autocomplete="off" row="3" name="message" />
                             <label for="text">{t('Message')}</label>
                         </div>
                       
-                        <div class="input-field">
-                            <input type="submit" class="submit" value={t('Send')} />
+                        <div className="input-field">
+                            <input type="submit" className="submit" value={t('Send')} />
                             
                         </div>
                        
@@ -410,17 +410,17 @@ const { t } = useTranslation();
          <Col xs={6} md={4} className='maa'> 
          
            <img src="https://image3.jdomni.in/banner/12082021/E0/EE/48/F434FFCF08C37D2430AE411D63_1628769844054.png?output-format=webp" className='kg'/>
-           <p class="yow">{t('Our Office Address')}</p>
-         <p class="yov">Malad West, Mumbai, Maharashtra </p>
+           <p className="yow">{t('Our Office Address')}</p>
+         <p className="yov">Malad West, Mumbai, Maharashtra </p>
          <img src="https://image3.jdomni.in/banner/12082021/33/C9/A3/B63D8D159012818287F3F730A6_1628769868105.png?output-format=webp" className='kg1'/>
-           <p class="yow1">{t('General Enquiries')} </p>
-         <p class="yov1">contact@mysites.com</p>
+           <p className="yow1">{t('General Enquiries')} </p>
+         <p className="yov1">contact@mysites.com</p>
          <img src="https://image2.jdomni.in/banner/12082021/D3/E0/4E/B72756E4920FAB8B4C2D054AEF_1628769879094.png?output-format=webp" className='kg2'/>
-           <p class="yow2">{t('Call Us')}</p>
-         <p class="yov2">+91-8888888888</p>
+           <p className="yow2">{t('Call Us')}</p>
+         <p className="yov2">+91-8888888888</p>
            <img src="https://image3.jdomni.in/banner/12082021/07/E1/76/11D3452A730382447A5B725399_1628769889180.png?output-format=webp" className='kg3'/>
-           <p class="yow3">{t('Our Timing')} </p>
-         <p class="yov3">Mon - Sun : 09:00 AM - 09:00 PM</p>
+           <p className="yow3">{t('Our Timing')} </p>
+         <p className="yov3">Mon - Sun : 09:00 AM - 09:00 PM</p>
           
            
          </Col>
@@ -440,13 +440,13 @@ const { t } = useTranslation();
 <Container>
 
 <Row>
-  <Col><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
-  <Col><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
-  <Col><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+  <Col><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+  <Col><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+  <Col><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
 </Row>
 <br></br>
 <Row>
-<Col className='ac'><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+<Col className='ac'><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
 </Row>
 
 <Row>
@@ -466,17 +466,17 @@ const { t } = useTranslation();
   <Col xs={6} md={4} className='maa'> 
   
     <img src="https://image3.jdomni.in/banner/12082021/E0/EE/48/F434FFCF08C37D2430AE411D63_1628769844054.png?output-format=webp" className='kg'/>
-    <p class="yow">Our Office Address</p>
-  <p class="yov">Malad West, Mumbai, Maharashtra </p>
+    <p className="yow">Our Office Address</p>
+  <p className="yov">Malad West, Mumbai, Maharashtra </p>
   <img src="https://image3.jdomni.in/banner/12082021/33/C9/A3/B63D8D159012818287F3F730A6_1628769868105.png?output-format=webp" className='kg1'/>
-    <p class="yow1">General Enquiries</p>
-  <p class="yov1">contact@mysites.com</p>
+    <p className="yow1">General Enquiries</p>
+  <p className="yov1">contact@mysites.com</p>
   <img src="https://image2.jdomni.in/banner/12082021/D3/E0/4E/B72756E4920FAB8B4C2D054AEF_1628769879094.png?output-format=webp" className='kg2'/>
-    <p class="yow2">Call Us</p>
-  <p class="yov2">+91-8888888888</p>
+    <p className="yow2">Call Us</p>
+  <p className="yov2">+91-8888888888</p>
     <img src="https://image3.jdomni.in/banner/12082021/07/E1/76/11D3452A730382447A5B725399_1628769889180.png?output-format=webp" className='kg3'/>
-    <p class="yow3">Our Timing</p>
-  <p class="yov3">Mon - Sun : 09:00 AM - 09:00 PM</p>
+    <p className="yow3">Our Timing</p>
+  <p className="yov3">Mon - Sun : 09:00 AM - 09:00 PM</p>
    
     
   </Col>
@@ -495,13 +495,13 @@ const { t } = useTranslation();
 <Container>
 
 <Row className='jh'>
-  <Col><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
-  <Col><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
-  <Col><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+  <Col><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+  <Col><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+  <Col><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
 </Row>
 <br></br>
 <Row className="jh">
-<Col className='ac'><input type="text" class="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
+<Col className='ac'><input type="text" className="form-control form-control cust-placeholder" placeholder="Full Name" maxlength="50" /> </Col>
 </Row>
 
 <Row>
@@ -521,22 +521,22 @@ const { t } = useTranslation();
         
         <Col xs={6} md={3} className='su1' >
             <img src="https://image3.jdomni.in/banner/12082021/E5/75/BF/5586237B79243FA3BD7A4ED252_1628766829674.png?output-format=webp" className='g'/>
-           <h5 class="k">Database of Millions of Members</h5>
+           <h5 className="k">Database of Millions of Members</h5>
            <p className='aq'>We have a wide choice from all the communities and a large NRI database so you can find your life partner with the assistance of the world's largest matchmaking service.</p>
         </Col>
         <Col xs={6} md={3} className='su2'  >
         <img src="https://image3.jdomni.in/banner/12082021/3F/8A/79/AC839B02B0E136437670B39F4C_1628767796054.png?output-format=webp" className='h'/>
-        <h5 class="k">Strict Profile Screening System</h5>
+        <h5 className="k">Strict Profile Screening System</h5>
          <p className='aq'>Our CRM team is committed to ensure that every profile put up in our database is screened to ensure you continue to have a smooth partner search experience.</p>
         </Col>
         <Col xs={6} md={3} className='su3'  >
         <img src="https://image2.jdomni.in/banner/12082021/34/67/EC/4FFB40B3124C9E9C7726EA3AF3_1628767233403.png?output-format=webp" className='i'/>
-          <h5 class="k">State of Art Search Technology</h5>
+          <h5 className="k">State of Art Search Technology</h5>
           <p className='aq'>Our customization, filtering, and blocking systems strive to build technology that will only bring you matches that are relevant to you.</p>
         </Col>
         <Col xs={6} md={3} className='su4' >
         <img src="https://image3.jdomni.in/banner/12082021/E1/04/31/B08C83F39F41BDECEE1F18F89A_1628767328182.png?output-format=webp" className='n'/>
-        <h5 class="k">Total Privacy Control</h5>
+        <h5 className="k">Total Privacy Control</h5>
         <p className='aq'>Safety and privacy, of the member is top priority. Being a certified matchmaking portal we let you decide who to give your contact information to.</p>
         </Col>
         
@@ -553,17 +553,17 @@ const { t } = useTranslation();
          <Col xs={6} md={4} className='maa'> 
          
            <img src="https://image3.jdomni.in/banner/12082021/E0/EE/48/F434FFCF08C37D2430AE411D63_1628769844054.png?output-format=webp" className='kg'/>
-           <p class="yow">Our Office Address</p>
-         <p class="yov">Malad West, Mumbai, Maharashtra </p>
+           <p className="yow">Our Office Address</p>
+         <p className="yov">Malad West, Mumbai, Maharashtra </p>
          <img src="https://image3.jdomni.in/banner/12082021/33/C9/A3/B63D8D159012818287F3F730A6_1628769868105.png?output-format=webp" className='kg1'/>
-           <p class="yow1">General Enquiries</p>
-         <p class="yov1">contact@mysites.com</p>
+           <p className="yow1">General Enquiries</p>
+         <p className="yov1">contact@mysites.com</p>
          <img src="https://image2.jdomni.in/banner/12082021/D3/E0/4E/B72756E4920FAB8B4C2D054AEF_1628769879094.png?output-format=webp" className='kg2'/>
-           <p class="yow2">Call Us</p>
-         <p class="yov2">+91-8888888888</p>
+           <p className="yow2">Call Us</p>
+         <p className="yov2">+91-8888888888</p>
            <img src="https://image3.jdomni.in/banner/12082021/07/E1/76/11D3452A730382447A5B725399_1628769889180.png?output-format=webp" className='kg3'/>
-           <p class="yow3">Our Timing</p>
-         <p class="yov3">Mon - Sun : 09:00 AM - 09:00 PM</p>
+           <p className="yow3">Our Timing</p>
+         <p className="yov3">Mon - Sun : 09:00 AM - 09:00 PM</p>
           
            
          </Col>

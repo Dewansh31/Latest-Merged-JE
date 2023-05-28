@@ -20,17 +20,17 @@ const ErrorPage = (props) => {
   return (
      <>
    
-<p class="zoom-area"> The page you are looking for is not found! </p>
-<section class="error-container">
-  <span class="four"><span class="screen-reader-text">404</span></span>
-  {/* <span class="zero"><span class="screen-reader-text">0</span></span>
-  <span class="four"><span class="screen-reader-text">4</span></span> */}
+<p className="zoom-area"> The page you are looking for is not found! </p>
+<section className="error-container">
+  <span className="four"><span className="screen-reader-text">404</span></span>
+  {/* <span className="zero"><span className="screen-reader-text">0</span></span>
+  <span className="four"><span className="screen-reader-text">4</span></span> */}
 </section>
-<div class="link-container">
+<div className="link-container">
 {
       (u)
-      ?  <Link  to="/" class="more-link">Go to Dashboard</Link>
-      :  <Link  to="/login" class="more-link">Login</Link>
+      ?  <Link  to="/" className="more-link">Go to Dashboard</Link>
+      :  <Link  to="/login" className="more-link">Login</Link>
 
 }
         

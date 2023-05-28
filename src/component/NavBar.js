@@ -17,11 +17,11 @@ export const NavBar = () => {
 
   // Contains the value and text for the options
 const languages = [
-  { value: 'en', text: "Language" },
-  { value: 'en', text: "English" },
-  { value: 'hi', text: "Hindi" },
-  { value: 'bn', text: "Bengali" },
-  { value: 'ur', text: "Urdu" }
+  {id:1, value: 'en', text: "Language" },
+  {id:2, value: 'en', text: "English" },
+  {id:3, value: 'hi', text: "Hindi" },
+  {id:4, value: 'bn', text: "Bengali" },
+  {id:5, value: 'ur', text: "Urdu" }
 ]
 
    // It is a hook imported from 'react-i18next'
@@ -41,52 +41,52 @@ const languages = [
     
       
 
-        <><nav class="navbar navbar-expand-sm navbar-dark fixed-top ">
-      <div class="container-fluid ">
+        <><nav className="navbar navbar-expand-sm navbar-dark fixed-top ">
+      <div className="container-fluid ">
         <img src="https://image1.jdomni.in/storeLogo/12082021/3B/2D/E0/A1EE351C97DE7D186F862167D6_1628770076813.png?output-format=webp" className='op' />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          {/* <span class="navbar-toggler-icon"></span> */}
-          <i class="fas fa-bars"></i>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          {/* <span className="navbar-toggler-icon"></span> */}
+          <i className="fas fa-bars"></i>
         </button>
 
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse" id="navbarNav">
          <Container className='glass'>
          <Row>
               <Col xs={6} md={1}>
               </Col>
               <Col xs={6} md={8} className='ui'>
-                <ul class="navbar-nav">
-                   <li class="nav-item a6">
-                   <a class="nav-link  o" aria-current="page" href="#"> HOME  </a>
+                <ul className="navbar-nav">
+                   <li className="nav-item a6">
+                   <a className="nav-link  o" aria-current="page" href="#"> HOME  </a>
                   </li>
-                  <li class="nav-item a7">
-                    <a class="nav-link  o" href="#aboutus">ABOUT US </a>
+                  <li className="nav-item a7">
+                    <a className="nav-link  o" href="#aboutus">ABOUT US </a>
                   </li>
-                  <li class="nav-item a8">
-                    <a class="nav-link  o" href="#whyus">WHY US   </a>
+                  <li className="nav-item a8">
+                    <a className="nav-link  o" href="#whyus">WHY US   </a>
                   </li>
-                  <li class="nav-item a9">
-                    <a class="nav-link  o" href="#contactus">CONTACT US   </a>
+                  <li className="nav-item a9">
+                    <a className="nav-link  o" href="#contactus">CONTACT US   </a>
                   </li>
                 </ul>
               </Col>
               <Col xs={6} md={3} >
-              <ul class="navbar-nav ui1">
-                  <li class="nav-item ">
-                   <NavLink class="o hue" to="/login">Log In  </NavLink>
+              <ul className="navbar-nav ui1">
+                  <li className="nav-item ">
+                   <NavLink className="o hue" to="/login">Log In  </NavLink>
                   </li>
-                  <li class="nav-item ">
-                    <NavLink class="o hef" to="/login"> | </NavLink>
+                  <li className="nav-item ">
+                    <NavLink className="o hef" to="/login"> | </NavLink>
                   </li>
-                  <li class="nav-item ">
-                    <NavLink class="o hug" to="/login" > Sign Up </NavLink>
+                  <li className="nav-item ">
+                    <NavLink className="o hug" to="/login" > Sign Up </NavLink>
                   </li>
 
                  <div style={{margin:"0 5px"}}>
                  <select value={lang} onChange={handleChange}>
                 {languages.map(item => {
-                    return (<option key={item.value} 
+                    return (<option key={item.id} 
                     value={item.value}>{item.text}</option>);
                 })}
             </select>
@@ -112,16 +112,16 @@ const languages = [
   )
 }
 /* 
-<li class="nav-item df">
+<li className="nav-item df">
 
 
-            <a class="nav-link active o" href="#">Log In</a>
+            <a className="nav-link active o" href="#">Log In</a>
                    </li>
-                 <li class="nav-item df">
-               <a class="nav-link active o" href="#">|</a>
+                 <li className="nav-item df">
+               <a className="nav-link active o" href="#">|</a>
                 </li>
-            <li class="nav-item df">
-                <a class="nav-link active o" href="#">Sign Up</a>
+            <li className="nav-item df">
+                <a className="nav-link active o" href="#">Sign Up</a>
                  </li>
  */
 

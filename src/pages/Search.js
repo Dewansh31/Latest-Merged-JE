@@ -275,8 +275,8 @@ function Search() {
     var p1 = sender.uid;
     var p2 = receiver.uid;
 
-    console.log(sender.uid);
-    console.log(receiver.uid);
+    // console.log(sender.uid);
+    // console.log(receiver.uid);
 
     const docRef = doc (db,`users`,`${p1}`);
     const docSnap = await getDoc(docRef);
@@ -523,10 +523,10 @@ function Search() {
 
   <div id="buttons d-flex flex-row">
     
-  <div class="container selectContainer">
+  <div className="container selectContainer">
  
-  <div class="row">
-    <div class="col">
+  <div className="row">
+    <div className="col">
 
 
 
@@ -538,7 +538,7 @@ function Search() {
         onChange={handleChange} // assign onChange function
       />
     </div>
-    <div class="col">
+    <div className="col">
     <Select
         placeholder={t('Income')}
         // className='button-value'
@@ -547,7 +547,7 @@ function Search() {
         onChange={handleIncome} // assign onChange function
       />
     </div>
-    <div class="col">
+    <div className="col">
     <Select
         placeholder={t('Religion')}
         // className='button-value'
@@ -556,7 +556,7 @@ function Search() {
         onChange={handleReligion} // assign onChange function
       />
     </div>
-    <div class="col">
+    <div className="col">
     <Select
         placeholder={t("Caste")}
         // className='button-value'
@@ -565,7 +565,7 @@ function Search() {
         onChange={handleCaste} // assign onChange function
       />
     </div>
-    <div class="col">
+    <div className="col">
   
 
 <Select
@@ -620,7 +620,7 @@ function Search() {
 
   { members.map((item) => (
  
-    <div className="col-sm-4" key={members.indexOf(item)}>
+    <div className="col-sm-4" key={item.uid}>
       <div className="card " style={{
         width: '100%',
         borderRadius:"20px",
@@ -628,7 +628,7 @@ function Search() {
         marginTop:"40px"
         }}>
 
-      <div class="cardheader" style={{width:"288px",paddingLeft:"8%"}}>
+      <div className="cardheader" style={{width:"288px",paddingLeft:"8%"}}>
 
       {
             (item.featured) ?
@@ -639,7 +639,7 @@ function Search() {
 
       </div>
 
-      <div class="avatar" style={{marginLeft:"10%"}}>
+      <div className="avatar" style={{marginLeft:"10%"}}>
         <img src={item.url}  className="card-img-top" alt="..." />
                    
                 </div>

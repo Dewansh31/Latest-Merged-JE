@@ -19,17 +19,43 @@
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
 
+// import React, { Suspense } from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// import './i18n.js'
+// import Spinner from './Spinner';
+// import "./Spinner.css"
+
+// ReactDOM.render(
+// 	<React.StrictMode>
+// 		<Suspense fallback={
+// 		<>
+// 		<div>
+// 		<Spinner/>
+// 		<h1 className='loading' style={{marginLeft:"15%",alignSelf:"center"}}> Loading ! Please wait ... </h1>
+// 		</div>
+// 		</>
+// 		}>
+// 			<App />
+// 		</Suspense>
+// 	</React.StrictMode>,
+// 	document.getElementById('root')
+// );
+
+
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import './i18n.js'
 import Spinner from './Spinner';
 import "./Spinner.css"
+import App from './App';
 
-ReactDOM.render(
-	<React.StrictMode>
-		<Suspense fallback={
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Suspense fallback={
 		<>
 		<div>
 		<Spinner/>
@@ -39,7 +65,6 @@ ReactDOM.render(
 		}>
 			<App />
 		</Suspense>
-	</React.StrictMode>,
-	document.getElementById('root')
+  </React.StrictMode>
 );
 

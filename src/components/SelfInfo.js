@@ -166,14 +166,14 @@ const SelfInfo = (props) => {
                   
 
                               <button
-                                  class="btn btn-success btn-sm btn-floating"
+                                  className="btn btn-success btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Edit"
                                   onClick={() => setToggleOneModal(!toggleOneModal)}
                                 >
-                                  <i class="fa fa-edit"></i>
+                                  <i className="fa fa-edit"></i>
                                 </button>
 
                                 <MDBModal show={toggleOneModal} setShow={setToggleOneModal} tabIndex='-1'>
@@ -905,8 +905,8 @@ const SelfInfo = (props) => {
               <MDBModalFooter style={{marginBottom:"5%"}}>
               <div style={{alignContent:"center",display:"flex",flexDirection:"row"}}>
 
-<Link style={{margin:"5%",width:"fit-content"}} type="button" class="btn btn-primary" to="/profile">Update Details</Link>
-<Link style={{margin:"5%"}} type="button" class="btn btn-secondary" to="/upgrade">Upgrade to premium 👑</Link>
+<Link style={{margin:"5%",width:"fit-content"}} type="button" className="btn btn-primary" to="/profile">Update Details</Link>
+<Link style={{margin:"5%"}} type="button" className="btn btn-secondary" to="/upgrade">Upgrade to premium 👑</Link>
 
 </div>
           

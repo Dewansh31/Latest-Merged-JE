@@ -5,7 +5,7 @@ function AddState() {
   return (
     <div>
     <main className="cn">
-    <select class="form-select mb-1 sc" aria-label="Default select example">
+    <select className="form-select mb-1 sc" aria-label="Default select example">
 <option selected>Select</option>
 <option value="1">Religion</option>
 <option value="2">Caste</option>
@@ -19,8 +19,8 @@ function AddState() {
             <div className="card indigo form-white">
               <div className="card-body">
                 <h5 className="default-text">All State</h5>
-                <div class="table-responsive">
-                  <table class="table">
+                <div className="table-responsive">
+                  <table className="table">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -33,27 +33,27 @@ function AddState() {
                         <th scope="row">1</th>
                         <td>Cell</td>
                         <td>
-                          <ul class="d-flex ">
-                            <li class="list-inline-item">
+                          <ul className="d-flex ">
+                            <li className="list-inline-item">
                               <button
-                                class="btn btn-success btn-sm btn-floating"
+                                className="btn btn-success btn-sm btn-floating"
                                 type="button"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
                               >
-                                <i class="fa fa-edit"></i>
+                                <i className="fa fa-edit"></i>
                               </button>
                             </li>
-                            <li class="list-inline-item">
+                            <li className="list-inline-item">
                               <button
-                                class="btn btn-danger btn-sm btn-floating"
+                                className="btn btn-danger btn-sm btn-floating"
                                 type="button"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
                               >
-                                <i class="fa fa-trash"></i>
+                                <i className="fa fa-trash"></i>
                               </button>
                             </li>
                           </ul>
@@ -63,27 +63,27 @@ function AddState() {
                         <th scope="row">2</th>
                         <td>Cell</td>
                         <td>
-                          <ul class="d-flex ">
-                            <li class="list-inline-item">
+                          <ul className="d-flex ">
+                            <li className="list-inline-item">
                               <button
-                                class="btn btn-success btn-sm btn-floating"
+                                className="btn btn-success btn-sm btn-floating"
                                 type="button"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
                               >
-                                <i class="fa fa-edit"></i>
+                                <i className="fa fa-edit"></i>
                               </button>
                             </li>
-                            <li class="list-inline-item">
+                            <li className="list-inline-item">
                               <button
-                                class="btn btn-danger btn-sm btn-floating"
+                                className="btn btn-danger btn-sm btn-floating"
                                 type="button"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
                               >
-                                <i class="fa fa-trash"></i>
+                                <i className="fa fa-trash"></i>
                               </button>
                             </li>
                           </ul>
@@ -93,27 +93,27 @@ function AddState() {
                         <th scope="row">3</th>
                         <td>Cell</td>
                         <td>
-                          <ul class="d-flex ">
-                            <li class="list-inline-item">
+                          <ul className="d-flex ">
+                            <li className="list-inline-item">
                               <button
-                                class="btn btn-success btn-sm btn-floating"
+                                className="btn btn-success btn-sm btn-floating"
                                 type="button"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
                               >
-                                <i class="fa fa-edit"></i>
+                                <i className="fa fa-edit"></i>
                               </button>
                             </li>
-                            <li class="list-inline-item">
+                            <li className="list-inline-item">
                               <button
-                                class="btn btn-danger btn-sm btn-floating"
+                                className="btn btn-danger btn-sm btn-floating"
                                 type="button"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
                               >
-                                <i class="fa fa-trash"></i>
+                                <i className="fa fa-trash"></i>
                               </button>
                             </li>
                           </ul>
@@ -140,7 +140,7 @@ function AddState() {
                   />
                 </div>
                 <div className="text-center mt-2 rk">
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" className="btn btn-primary">
                     Save
                   </button>
                 </div>

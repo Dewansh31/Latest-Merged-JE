@@ -319,7 +319,7 @@ function FreeMember(props) {
   
   <div className="d-flex flex-row">
 
-  {/* <select class="form-select mb-2" value={type}  onChange={(e) => {setMemberType(e)}} name="members"  aria-label="Default select example">
+  {/* <select className="form-select mb-2" value={type}  onChange={(e) => {setMemberType(e)}} name="members"  aria-label="Default select example">
   <option value={!flag} >Free Member</option>
   <option value={flag}  >Premium Member</option>
  
@@ -399,17 +399,17 @@ function FreeMember(props) {
                     {item.featured}
                   </td>
                   <td>
-                  <ul class="d-flex ">
-                              <li class="list-inline-item">
+                  <ul className="d-flex ">
+                              <li className="list-inline-item">
                                 <button
-                                  class="btn btn-success btn-sm btn-floating"
+                                  className="btn btn-success btn-sm btn-floating"
                                   type="button"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Edit"
                                   onClick={()=>handleCurrent(item)}
                                 >
-                                  <i class="fa fa-edit"></i>
+                                  <i className="fa fa-edit"></i>
                                 </button>
                               </li>
                              

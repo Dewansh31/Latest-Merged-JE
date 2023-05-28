@@ -187,7 +187,7 @@ function AddCaste(props) {
 
       <Sidebar2 name={props.name}/>
     <main className="cn">
-    <select class="form-select mb-1 sc" aria-label="Default select example">
+    <select className="form-select mb-1 sc" aria-label="Default select example">
 
     {
     cityList.map((item) => (
@@ -206,8 +206,8 @@ function AddCaste(props) {
       
       <div className="acard-body" >
       <h5 className="default-text">All Castes</h5>
-      <div class="table-responsive">
-        <table class="table">
+      <div className="table-responsive">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">S.N.</th>
@@ -222,10 +222,10 @@ function AddCaste(props) {
               <th scope="row">{cityList.indexOf(item)+1}</th>
               <td>{item}</td>
               <td>
-                <ul class="d-flex ">
-                  <li class="list-inline-item">
+                <ul className="d-flex ">
+                  <li className="list-inline-item">
                     <button
-                      class="btn btn-success btn-sm btn-floating"
+                      className="btn btn-success btn-sm btn-floating"
                       type="button"
                       data-toggle="tooltip"
                       data-placement="top"
@@ -235,19 +235,19 @@ function AddCaste(props) {
                         setEditVisible(true)
                       }}
                     >
-                      <i class="fa fa-edit"></i>
+                      <i className="fa fa-edit"></i>
                     </button>
                   </li>
-                  <li class="list-inline-item">
+                  <li className="list-inline-item">
                     <button
-                      class="btn btn-danger btn-sm btn-floating"
+                      className="btn btn-danger btn-sm btn-floating"
                       type="button"
                       data-toggle="tooltip"
                       data-placement="top"
                       title="Delete"
                       onClick={() => deleteCaste(item)}
                     >
-                      <i class="fa fa-trash"></i>
+                      <i className="fa fa-trash"></i>
                     </button>
                   </li>
                 </ul>
@@ -281,7 +281,7 @@ function AddCaste(props) {
                   />
                 </div>
                 <div className="text-center mt-2 rk">
-                  <button type="button" class="btn btn-primary" onClick={addCities}>
+                  <button type="button" className="btn btn-primary" onClick={addCities}>
                     Save
                   </button>
                 </div>
@@ -304,7 +304,7 @@ function AddCaste(props) {
     />
   </div>
   <div className="text-center mt-2 rk">
-    <button type="button" class="btn btn-primary" onClick={handleEdit}>
+    <button type="button" className="btn btn-primary" onClick={handleEdit}>
       Edit
     </button>
   </div>

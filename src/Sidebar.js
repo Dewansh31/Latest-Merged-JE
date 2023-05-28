@@ -18,14 +18,13 @@ const firestore = getFirestore(app);
 function Sidebar(props) {
 
     // Contains the value and text for the options
-const languages = [
-  { value: 'en', text: "Choose Language" },
-  { value: 'en', text: "English" },
-  { value: 'hi', text: "Hindi" },
-  { value: 'bn', text: "Bengali" },
-  { value: 'ur', text: "Urdu" }
-]
-
+    const languages = [
+      {id:1, value: 'en', text: "Language" },
+      {id:2, value: 'en', text: "English" },
+      {id:3, value: 'hi', text: "Hindi" },
+      {id:4, value: 'bn', text: "Bengali" },
+      {id:5, value: 'ur', text: "Urdu" }
+    ]
    // It is a hook imported from 'react-i18next'
    const { t } = useTranslation(); 
   
@@ -52,7 +51,7 @@ const languages = [
     const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const Data = docSnap.data();
-    console.log(Data);
+    // console.log(Data);
     setSStatus(Data.active)
 
   }
@@ -96,7 +95,7 @@ const languages = [
     const docRef = doc (firestore,`users`,`${user.uid}`);
     const docSnap = await getDoc(docRef);
     const bgDetailsData = docSnap.data();
-    console.log(bgDetailsData.url);
+    // console.log(bgDetailsData.url);
     
     { bgDetailsData.url &&
       setprofile1Url(bgDetailsData.url)
@@ -136,7 +135,7 @@ const languages = [
     const auth = getAuth();
     const user = auth.currentUser;
     setUN(props.username);
-    console.log(user);
+    // console.log(user);
     setUser(user)
     getStatus()
     getPhoto();
@@ -215,12 +214,13 @@ const languages = [
         </label>
 
         <div style={{margin:"0 5px"}}>
-                 <select value={lang} onChange={handleChange}>
+        <select value={lang} onChange={handleChange}>
                 {languages.map(item => {
-                    return (<option key={item.value} 
+                    return (<option key={item.id} 
                     value={item.value}>{item.text}</option>);
                 })}
             </select>
+        
                  </div>
 
         <div className="header-menu">
@@ -251,7 +251,7 @@ const languages = [
      <Button variant="danger">
 
 
-          {/* <span class="badge badge-danger"> */}
+          {/* <span className="badge badge-danger"> */}
             <div className="user" onClick={handleLogout}>
                       <span className="las la-power-off" />
                       <span><b>{t('Logout')}</b></span>
